@@ -64,6 +64,9 @@ let mapleader=","
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 
+" coffee script plugin
+au BufWritePost *.coffee silent CoffeeMake!
+
 " colors
 set background=dark
 let g:solarized_termtrans=1
