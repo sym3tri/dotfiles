@@ -6,6 +6,7 @@ version 6.0
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
+
 imap <D-BS> 
 imap <M-BS> 
 imap <M-Down> }
@@ -32,9 +33,9 @@ vmap <D-x> "*d
 vmap <D-c> "*y
 vmap <D-v> "-d"*P
 nmap <D-v> "*P
+
 let &cpo=s:cpo_save
 unlet s:cpo_save
-set background=dark
 set backspace=indent,eol,start
 set fileencodings=ucs-bom,utf-8,default,latin1
 set guifont=Inconsolata:h14
@@ -51,7 +52,12 @@ set termencoding=utf-8
 set nowrap!
 set number
 
+" Enable filetype plugins and indention
+filetype on
+filetype plugin on
+
 " CommandT
+
 " Set <leader> to ',' and <localleader> to "\"
 let mapleader=","
 
