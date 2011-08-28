@@ -61,6 +61,9 @@ filetype plugin on
 " Set <leader> to ',' and <localleader> to "\"
 let mapleader=","
 
+" SuperTab
+let g:SuperTabDefaultCompletionType = "context"
+
 " colors
 set background=dark
 let g:solarized_termtrans=1
