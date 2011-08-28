@@ -1,5 +1,7 @@
+" pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+
 version 6.0
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
@@ -47,10 +49,13 @@ set shiftwidth=4
 set smartindent
 set termencoding=utf-8
 set nowrap!
-" vim: set ft=vim :
 set number
-map <D-r> :CommandT<CR>
 
+" CommandT
+" Set <leader> to ',' and <localleader> to "\"
+let mapleader=","
+
+" colors
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
