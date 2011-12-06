@@ -75,6 +75,9 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
+" transparency, hellz yeah
+set transparency=8
+
 syn on
 set clipboard=unnamed
 
