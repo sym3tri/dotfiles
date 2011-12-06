@@ -18,4 +18,3 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # This loads RVM into a shell session.
 [[ -s "/Users/Edo/.rvm/scripts/rvm" ]] && source "/Users/Edo/.rvm/scripts/rvm"  
 
-
