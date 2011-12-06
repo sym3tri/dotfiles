@@ -114,3 +114,12 @@ endfunction
 " map trailing spaces function to shortcut key: ,$
 nmap <silent> <leader>$ :call <SID>StripTrailingWhitespaces()<CR>
 
+
+" MACVIM SPECIFIC
+
+" Disable toolbar
+if has("gui_running")
+    set guioptions=egmrt
+endif
+
+
