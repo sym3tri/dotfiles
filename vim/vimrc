@@ -94,7 +94,8 @@ set listchars+=trail:·
 set listchars+=nbsp:f
 
 "Invisible character colors
-highlight NonText guifg=#044A46
+highlight NonText guifg=#236360
+"#044A46
 highlight SpecialKey guifg=#044A46
 
 " function to strip all trailing spaces
