@@ -125,6 +125,8 @@ endfunction
 " map trailing spaces function to shortcut key: ,$
 nmap <silent> <leader>$ :call <SID>StripTrailingWhitespaces()<CR>
 
+" Shortcut to initialize edit command in dir of current file
+map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " MACVIM SPECIFIC
 
