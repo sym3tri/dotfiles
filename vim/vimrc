@@ -106,7 +106,6 @@ set listchars+=nbsp:f
 
 "Invisible character colors
 highlight NonText guifg=#236360
-"#044A46
 highlight SpecialKey guifg=#044A46
 
 " function to strip all trailing spaces
@@ -127,6 +126,9 @@ nmap <silent> <leader>$ :call <SID>StripTrailingWhitespaces()<CR>
 
 " Shortcut to initialize edit command in dir of current file
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Shortcut to toggle spellchecker
+nmap <silent> <leader>s :set spell!<CR>
 
 " MACVIM SPECIFIC
 
