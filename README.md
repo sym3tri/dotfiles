@@ -14,6 +14,7 @@ INSTALL
 - git clone this repo
 - run 'git submodule init' and 'git submodule update'
 - create symlinks from user dir to all relevent files
+- point iTerm to the plist file
 - install Inconsolata font
 
 
