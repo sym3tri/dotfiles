@@ -5,8 +5,7 @@
 "  |  __|  / _` |  _  // _ \ / _ \| __| '_ \       / __|/ _ \| '_ ` _ \ 
 "  | |____| (_| | | \ \ (_) | (_) | |_| | | |  _  | (__| (_) | | | | | |
 "  |______|\__,_|_|  \_\___/ \___/ \__|_| |_| (_)  \___|\___/|_| |_| |_|
-"_______________________________________________________________________                                                                      
-
+"_______________________________________________________________________
 
 
 " pathogen
@@ -49,7 +48,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
 set fileencodings=ucs-bom,utf-8,default,latin1
-set guifont=Inconsolata:h14
+set guifont=Inconsolata:h16
 set guitablabel=%M%t
 set helplang=en
 set langmenu=none
