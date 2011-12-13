@@ -11,10 +11,13 @@ export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 export TERM=xterm-256color
 
+# tell git to use macvim as the default editor
+export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -gf '
+
 # MacPorts Installer addition on 2011-07-25_at_23:54:05: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # This loads RVM into a shell session.
-[[ -s "/Users/Edo/.rvm/scripts/rvm" ]] && source "/Users/Edo/.rvm/scripts/rvm"  
+# [[ -s "/Users/Edo/.rvm/scripts/rvm" ]] && source "/Users/Edo/.rvm/scripts/rvm"  
 

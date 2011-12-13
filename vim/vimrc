@@ -38,7 +38,7 @@ filetype plugin on
 set autoread
 
 " dont wrap text
-set nowrap!
+set nowrap
 " show line numbers
 set number
 " show column position
