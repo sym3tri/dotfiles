@@ -8,15 +8,145 @@
 "_______________________________________________________________________
 
 
-" pathogen
+" Pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-version 6.0
-if &cp | set nocp | endif
-let s:cpo_save=&cpo
-set cpo&vim
 
+"-----------------------------------------------------------------------
+" STANDARD VIM
+"-----------------------------------------------------------------------
+
+" help language should be English
+set helplang=en
+" lang to use for menu translations
+set langmenu=none
+
+" make backspace work normally on *NIX systems
+set backspace=indent,eol,start
+
+" always save as utf-8
+set fileencodings=utf-8
+set termencoding=utf-8
+
+" Enable filetype detection
+filetype on
+" load filetype specific plugins
+filetype plugin on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" dont wrap text
+set nowrap!
+" show line numbers
+set number
+" show column position
+set ruler
+" ignore case when searching
+set ignorecase
+" dont ignore case if capital letters are present
+set smartcase
+" highlight searched things
+set hlsearch
+" highlight search chars as they are types
+set incsearch
+" no error bells
+set noerrorbells
+" Allow specified keys that move the cursor left/right to move to the prev/next line
+set whichwrap+=h,l
+
+" Turn backup off, since most stuff is in git anyway...
+set nobackup
+set nowb
+set noswapfile
+
+" code folding
+" fold based on indent
+set foldmethod=indent
+" deepest fold is 10 levels
+set foldnestmax=10
+" no fold by default
+set nofoldenable
+set foldlevel=1
+
+
+" Persistent undo
+set undodir=~/.vim_runtime/undodir
+set undofile
+
+" Tabs
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+set smartindent
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+set listchars+=trail:·
+set listchars+=nbsp:f
+
+" Set <leader> to comma
+let mapleader=","
+
+" function to strip all trailing spaces
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+
+" SHORTCUT KEY MAPPINGS
+" ---------------------
+
+" Shortcut to rapidly toggle `set list` which will show/hide hidden chars
+nmap <leader>l :set list!<CR>
+
+" map shourtcut to trim all trailing to: \$
+nmap <silent> <leader>$ :call <SID>StripTrailingWhitespaces()<CR>
+
+" Shortcut to initialize edit command in dir of current file
+map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Shortcut to toggle spellchecker
+nmap <silent> <leader>s :set spell!<CR>
+
+"-----------------------------------------------------------------------
+" MAC VIM
+"-----------------------------------------------------------------------
+
+" font and size
+set guifont=Inconsolata:h16
+
+set guitablabel=%M%t
+
+" enable use of the mouse
+set mouse=a
+
+" Disable toolbar
+if has("gui_running")
+    set guioptions=egmrt
+endif
+
+" transparency, hellz yeah
+set transparency=8
+
+" use the OS clipboard
+set clipboard=unnamed
+
+" Printing
+set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
+
+" Mac Vim specific key mappings
+" -----------------------------
 imap <D-BS> 
 imap <M-BS> 
 imap <M-Down> }
@@ -28,7 +158,7 @@ noremap! <D-Right> <End>
 noremap! <M-Left> <C-Left>
 noremap! <D-Left> <Home>
 map! <D-v> *
-nmap gx <Plug>NetrwBrowseX
+map gx <Plug>NetrwBrowseX
 map <M-Down> }
 noremap <D-Down> <C-End>
 map <M-Up> {
@@ -44,40 +174,30 @@ vmap <D-c> "*y
 vmap <D-v> "-d"*P
 nmap <D-v> "*P
 
-let &cpo=s:cpo_save
-unlet s:cpo_save
-set backspace=indent,eol,start
-set fileencodings=ucs-bom,utf-8,default,latin1
-set guifont=Inconsolata:h16
-set guitablabel=%M%t
-set helplang=en
-set langmenu=none
-set mouse=a
-set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
-set expandtab
-set softtabstop=4
-set shiftwidth=4
-set smartindent
-set termencoding=utf-8
-set nowrap!
-set number
+"-----------------------------------------------------------------------
+" PLUGINS
+"-----------------------------------------------------------------------
 
-" Enable filetype plugins and indention
-filetype on
-filetype plugin on
+" closetag
 
-" CommandT
+" command-t
 
-" Set <leader> to ',' and <localleader> to "\"
-let mapleader=","
+" delimitate
 
-" SuperTab
-let g:SuperTabDefaultCompletionType = "context"
+" fugitive
 
-" coffee script plugin
+" nerdcommenter
+
+" vim-coffee-script
 au BufWritePost *.coffee silent CoffeeMake!
 
-" colors
+" vim-surround
+
+"-----------------------------------------------------------------------
+" COLORS
+"-----------------------------------------------------------------------
+
+" color scheme
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
@@ -85,55 +205,20 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
-" transparency, hellz yeah
-set transparency=8
-
+" syntax highlighting
 syn on
-set clipboard=unnamed
-
-
-
-" INVISIBLE CHARACTERS SETTINGS
-
-" Shortcut to rapidly toggle `set list` which will show/hide hidden chars
-nmap <leader>l :set list!<CR>
- 
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-set listchars+=trail:·
-set listchars+=nbsp:f
 
 "Invisible character colors
 highlight NonText guifg=#236360
 highlight SpecialKey guifg=#044A46
 
-" function to strip all trailing spaces
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-
-" map trailing spaces function to shortcut key: ,$
-nmap <silent> <leader>$ :call <SID>StripTrailingWhitespaces()<CR>
-
-" Shortcut to initialize edit command in dir of current file
-map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
-
-" Shortcut to toggle spellchecker
-nmap <silent> <leader>s :set spell!<CR>
-
-" MACVIM SPECIFIC
-
-" Disable toolbar
-if has("gui_running")
-    set guioptions=egmrt
-endif
+"_______________________________________________________________________
 
 
+" ???????????????
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+let &cpo=s:cpo_save
+unlet s:cpo_save
+" ???????????????
