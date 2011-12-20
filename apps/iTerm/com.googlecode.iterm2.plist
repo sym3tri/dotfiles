@@ -459,9 +459,9 @@
 	<key>NSRepeatCountBinding</key>
 	<string></string>
 	<key>NSWindow Frame Preferences</key>
-	<string>302 391 924 485 0 0 1440 878 </string>
+	<string>183 322 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>377 66 640 451 0 0 1440 878 </string>
+	<string>445 291 640 451 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -676,7 +676,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Yes</string>
+			<string>No</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -1196,7 +1196,7 @@
 	<key>PasteFromClipboard</key>
 	<true/>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/ed/dotfiles/apps/iTerm</string>
+	<string>/Users/ed.rooth/dotfiles/apps/iTerm</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -1214,7 +1214,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2011-12-11T02:10:04Z</date>
+	<date>2011-12-20T00:45:48Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
