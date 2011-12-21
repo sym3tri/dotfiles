@@ -15,9 +15,32 @@ export TERM=xterm-256color
 export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -gf '
 
 # MacPorts Installer addition on 2011-07-25_at_23:54:05: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # This loads RVM into a shell session.
 # [[ -s "/Users/Edo/.rvm/scripts/rvm" ]] && source "/Users/Edo/.rvm/scripts/rvm"  
 
+
+if [ "$PS1" ]; then
+    export PS1='\u\[\e[1;37m\]@\[\e[1;32m\]\h\[\e[1;37m\]:\[\e[1;31m\]\W\[\e[1;33m\]$(parse_git_branch)\[\e[0;39m\]$ '
+    export PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
+
+    export INTERACTIVE_SHELL=1
+else
+    export INTERACTIVE_SHELL=0
+fi
+
+# adds git bash completion
+#if [ -f /opt/local/etc/bash_completion ]; then
+#    . /opt/local/etc/bash_completion
+#fi
+
+# set the prompt for interactive shells
+# http://en.tldp.org/HOWTO/Bash-Prompt-HOWTO/
+parse_git_branch() {
+    # returns '(git branch name) ' if inside git directory, 
+    # otherwise returns ''
+    #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* /() /'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ (\1)/'
+}
