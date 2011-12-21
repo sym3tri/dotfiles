@@ -32,9 +32,7 @@ else
 fi
 
 # adds git bash completion
-#if [ -f /opt/local/etc/bash_completion ]; then
-#    . /opt/local/etc/bash_completion
-#fi
+source ~/.git-completion.sh
 
 # set the prompt for interactive shells
 # http://en.tldp.org/HOWTO/Bash-Prompt-HOWTO/

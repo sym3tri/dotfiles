@@ -215,6 +215,21 @@ highlight SpecialKey guifg=#044A46
 "_______________________________________________________________________
 
 
+"-----------------------------------------------------------------------
+" WORK SPECIFIC
+"-----------------------------------------------------------------------
+" set highlighting for Scons files to python
+autocmd BufReadPre SConstruct set filetype=python
+autocmd BufReadPre SConscript set filetype=python
+
+" use 4 space tabs for python files
+au FileType python setl tabstop=4
+au FileType python setl shiftwidth=4
+
+"_______________________________________________________________________
+
+
+
 " ???????????????
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
