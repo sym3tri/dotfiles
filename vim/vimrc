@@ -134,10 +134,10 @@ set mouse=a
 " Disable toolbar
 if has("gui_running")
     set guioptions=egmrt
+    
+    " transparency, hellz yeah
+    set transparency=8
 endif
-
-" transparency, hellz yeah
-set transparency=8
 
 " use the OS clipboard
 set clipboard=unnamed
