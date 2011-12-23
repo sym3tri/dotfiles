@@ -6,6 +6,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# use colors for grep
+export GREP_OPTIONS='--color=auto'
+
 # make sure colors show up in iTerm
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
@@ -39,6 +42,5 @@ source ~/.git-completion.sh
 parse_git_branch() {
     # returns '(git branch name) ' if inside git directory, 
     # otherwise returns ''
-    #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* /() /'
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ (\1)/'
 }
