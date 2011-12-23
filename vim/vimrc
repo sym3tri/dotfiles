@@ -212,6 +212,10 @@ syn on
 highlight NonText guifg=#236360
 highlight SpecialKey guifg=#044A46
 
+" warning for beyond the 80th column
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 "_______________________________________________________________________
 
 
