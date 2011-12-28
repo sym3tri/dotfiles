@@ -1,3 +1,4 @@
+alias c='clear'
 alias ls='ls -la'
 alias gs='git status'
 alias gb='git branch'
