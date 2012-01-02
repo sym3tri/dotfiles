@@ -134,7 +134,7 @@ set mouse=a
 " Disable toolbar
 if has("gui_running")
     set guioptions=egmrt
-    
+
     " transparency, hellz yeah
     set transparency=8
 endif
@@ -207,6 +207,10 @@ colorscheme solarized
 
 " syntax highlighting
 syn on
+
+"Higlight current line only in insert mode
+autocmd InsertLeave * set nocursorline
+autocmd InsertEnter * set cursorline
 
 "Invisible character colors
 highlight NonText guifg=#236360
