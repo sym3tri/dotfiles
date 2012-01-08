@@ -7,6 +7,11 @@
 "  |______|\__,_|_|  \_\___/ \___/ \__|_| |_| (_)  \___|\___/|_| |_| |_|
 "_______________________________________________________________________
 
+"-----------------------------------------------------------------------
+" QUICK REFERENCE
+"-----------------------------------------------------------------------
+" help quickref
+"-----------------------------------------------------------------------
 
 " Pathogen
 call pathogen#runtime_append_all_bundles()
@@ -70,6 +75,11 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
+" Autocomplete with OmniComplete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " Persistent undo
 set undodir=~/.vim_runtime/undodir
@@ -191,6 +201,10 @@ nmap <D-v> "*P
 " vim-coffee-script
 au BufWritePost *.coffee silent CoffeeMake!
 
+" supertab
+" user supertab with OmniComplete based on context
+let g:SuperTabDefaultCompletionType = "context"
+
 " vim-surround
 
 "-----------------------------------------------------------------------
@@ -207,6 +221,9 @@ colorscheme solarized
 
 " syntax highlighting
 syn on
+
+" specify syntax language for non-standard file types
+au BufReadPost *.less set syntax=css
 
 "Higlight current line only in insert mode
 autocmd InsertLeave * set nocursorline
