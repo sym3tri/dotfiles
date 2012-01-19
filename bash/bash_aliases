@@ -7,6 +7,7 @@ alias gp='git push'
 alias grep="grep --color=always"
 alias ..="cd .."
 alias ...="cd ../.."
+alias jslint=~/dotfiles/apps/JSLintWrapper/jslint
 
 # for work
 alias cdck="cd /data/ck/cloudkick/webapp/"
