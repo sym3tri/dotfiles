@@ -26,7 +26,7 @@ else
 		fi
 
 		#Invoke jslint via jsc
-		/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc  $JSLINT $JSC_WRAPPER -- "=`cat $sourcefile`"
+		/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc  $JSLINT $JSC_WRAPPER -- "`cat $sourcefile`"
 		
 		echo "==="		
 	done
