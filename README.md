@@ -20,4 +20,4 @@ INSTALL
 OTHER COOL STUFF
 ---
 
-Other cool OSX hacks/settings on the wiki https://github.com/sym3tri/dotfiles/wiki
+Other cool OSX hacks/settings on the wiki https://github.com/sym3tri/dotfiles/wiki/Other-OSX-Config
