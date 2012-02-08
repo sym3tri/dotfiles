@@ -493,7 +493,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>181 366 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>439 150 1004 728 0 0 1440 878 </string>
+	<string>265 172 1123 706 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1384,6 +1384,8 @@
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Blend</key>
+			<real>0.30000001192092896</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
@@ -1454,6 +1456,8 @@
 			</dict>
 			<key>Guid</key>
 			<string>D3445695-1088-475E-B29D-069505FEF5A2</string>
+			<key>Hide After Opening</key>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Idle Code</key>
@@ -2011,7 +2015,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2012-01-31T08:13:53Z</date>
+	<date>2012-02-02T06:17:42Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
