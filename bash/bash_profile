@@ -14,13 +14,6 @@ export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 export TERM=xterm-256color
 
-# MacPorts Installer addition on 2011-07-25_at_23:54:05: adding an appropriate PATH variable for use with MacPorts.
-# export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-# This loads RVM into a shell session.
-# [[ -s "/Users/Edo/.rvm/scripts/rvm" ]] && source "/Users/Edo/.rvm/scripts/rvm"
-
 ############
 # Git Stuff
 ############
@@ -55,3 +48,6 @@ function git_current_branch() {
 function git_current_origin() {
   git config --get remote.origin.url | sed -e 's/^.*\://' | sed -e 's/\.git.*//'
 }
+
+# RVM
+[[ -s "/Users/ed/.rvm/scripts/rvm" ]] && source "/Users/ed/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

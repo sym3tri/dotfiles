@@ -199,12 +199,14 @@ nmap <D-v> "*P
 
 " nerdcommenter
 
-" vim-coffee-script
-au BufWritePost *.coffee silent CoffeeMake!
+" nerdtree
+nmap <leader>nt :NERDTree<CR>
 
 " supertab
 " user supertab with OmniComplete based on context
 let g:SuperTabDefaultCompletionType = "context"
+
+" snipmate
 
 " vim-surround
 
