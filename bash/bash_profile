@@ -1,6 +1,9 @@
 #! /bin/sh
 PATH=$PATH:/usr/local/bin:$HOME/local/bin;
 
+# add env variable for hubalog root dir
+export HUBALOG_ROOT=$HOME/Dev/hubalog/
+
 # load alias definitions
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
