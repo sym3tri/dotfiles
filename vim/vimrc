@@ -118,6 +118,9 @@ endfunction
 " SHORTCUT KEY MAPPINGS
 " ---------------------
 
+" shortcut to change windows
+map <leader>w <C-w><C-w>
+
 " Shortcut to rapidly toggle `set list` which will show/hide hidden chars
 nmap <leader>l :set list!<CR>
 
