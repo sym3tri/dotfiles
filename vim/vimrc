@@ -118,12 +118,11 @@ endfunction
 " SHORTCUT KEY MAPPINGS
 " ---------------------
 
-" shortcut to change windows
-map <C-h> <C-w>h
-map <C-l> <C-w>l
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-
+" shortcut to change windows (and maximize if up/down_)
+map <C-H> <C-w>h
+map <C-L> <C-w>l
+map <C-K> <C-W>k<C-W>_
+map <C-J> <C-W>j<C-W>_
 
 " Shortcut to rapidly toggle `set list` which will show/hide hidden chars
 nmap <leader>l :set list!<CR>
