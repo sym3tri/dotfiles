@@ -101,6 +101,9 @@ set listchars+=nbsp:f
 " Set <leader> to comma
 let mapleader=","
 
+" clear search highlights
+noremap <silent><Leader>/ :nohls<CR>
+
 " function to strip all trailing spaces
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
