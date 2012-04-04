@@ -129,6 +129,7 @@ map <C-J> <C-W>j<C-W>_
 
 " Shortcut to rapidly toggle `set list` which will show/hide hidden chars
 nmap <leader>l :set list!<CR>
+set list
 
 " map shourtcut to trim all trailing to: \$
 nmap <silent> <leader>$ :call <SID>StripTrailingWhitespaces()<CR>
