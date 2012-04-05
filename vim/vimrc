@@ -210,10 +210,14 @@ nmap <D-v> "*P
 " nerdcommenter
 
 " nerdtree
-nmap <leader>nt :NERDTree<CR>
+let NERDTreeShowHidden=1
+nmap <leader>nn :NERDTree<CR>
+nmap <leader>nr :NERDTreeMirror<CR>
+nmap <leader>nf :NERDTreeFind<CR>
 
 " jslint.vim
 nmap <leader>js :JSLintToggle<CR>
+let $JS_CMD='node'
 
 " supertab
 " user supertab with OmniComplete based on context

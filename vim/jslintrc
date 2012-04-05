@@ -1,2 +1,23 @@
-/* global jQuery, $ */
-/* indent: 2 */
+/*jslint
+indent: 2,
+maxlen: 80,
+node: true,
+sloppy: true,
+nomen: true
+*/
+/*global
+jQuery,
+$,
+_,
+goog,
+ck,
+jasmine,
+describe,
+it,
+expect,
+spyOn,
+beforeEach,
+afterEach,
+gettext,
+servo
+*/
