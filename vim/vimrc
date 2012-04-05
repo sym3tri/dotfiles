@@ -212,6 +212,9 @@ nmap <D-v> "*P
 " nerdtree
 nmap <leader>nt :NERDTree<CR>
 
+" jslint.vim
+nmap <leader>js :JSLintToggle<CR>
+
 " supertab
 " user supertab with OmniComplete based on context
 let g:SuperTabDefaultCompletionType = "context"
