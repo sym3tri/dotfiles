@@ -6,6 +6,7 @@ sloppy: true,
 nomen: true
 */
 /*global
+window,
 jQuery,
 $,
 _,
