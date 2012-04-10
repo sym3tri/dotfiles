@@ -101,6 +101,9 @@ set listchars+=nbsp:f
 " Set <leader> to comma
 let mapleader=","
 
+" clear search highlights
+noremap <silent><Leader>/ :nohls<CR>
+
 " function to strip all trailing spaces
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -126,6 +129,7 @@ map <C-J> <C-W>j<C-W>_
 
 " Shortcut to rapidly toggle `set list` which will show/hide hidden chars
 nmap <leader>l :set list!<CR>
+set list
 
 " map shourtcut to trim all trailing to: \$
 nmap <silent> <leader>$ :call <SID>StripTrailingWhitespaces()<CR>
@@ -206,7 +210,14 @@ nmap <D-v> "*P
 " nerdcommenter
 
 " nerdtree
-nmap <leader>nt :NERDTree<CR>
+let NERDTreeShowHidden=1
+nmap <leader>nn :NERDTree<CR>
+nmap <leader>nr :NERDTreeMirror<CR>
+nmap <leader>nf :NERDTreeFind<CR>
+
+" jslint.vim
+nmap <leader>js :JSLintToggle<CR>
+let $JS_CMD='node'
 
 " supertab
 " user supertab with OmniComplete based on context
