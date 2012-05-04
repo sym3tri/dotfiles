@@ -9,6 +9,7 @@ nomen: true
 window,
 jQuery,
 $,
+d3,
 _,
 goog,
 ck,
@@ -19,6 +20,7 @@ expect,
 spyOn,
 beforeEach,
 afterEach,
+setFixtures,
 gettext,
 servo
 */
