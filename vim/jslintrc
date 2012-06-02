@@ -3,7 +3,8 @@ indent: 2,
 maxlen: 80,
 node: true,
 sloppy: true,
-nomen: true
+nomen: true,
+white: true
 */
 /*global
 window,
