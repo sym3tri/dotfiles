@@ -245,6 +245,11 @@ syn on
 " specify syntax language for non-standard file types
 au BufReadPost *.less set syntax=css
 
+" Pretend handlebars files are html
+au BufNewFile,BufRead *.handlebars set filetype=html
+au BufNewFile,BufRead *.hbs set filetype=html
+
+
 "Higlight current line only in insert mode
 autocmd InsertLeave * set nocursorline
 autocmd InsertEnter * set cursorline
