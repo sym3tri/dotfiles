@@ -2,11 +2,14 @@
 indent: 2,
 maxlen: 80,
 node: true,
-sloppy: true,
+sloppy: false,
 nomen: true,
 white: true
 */
+
 /*global
+define,
+require,
 window,
 jQuery,
 $,
