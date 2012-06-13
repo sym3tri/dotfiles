@@ -10,4 +10,26 @@ snippet req
 
 snippet it
 	it('', function () {
+	  ${1}
+	});
+
+snippet spec
+	describe('${1}', function () {
+	
+	  var ${2:globals};
+	
+	  beforeEach(function () {
+	
+	  });
+	
+	  afterEach(function () {
+	
+	  });
+	
+	  it('${3}', function () {
+	
+	    expect(false).toBe(true);
+	
+	  });
+	
 	});

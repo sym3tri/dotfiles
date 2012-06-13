@@ -16,6 +16,8 @@ INSTALL
 - point iTerm to the plist file
 - install Inconsolata font
 
+Install new vim plugin: `git submodule add git://github.com/<plugin-repo>.git vim/bundle/<plugin-name>`
+
 
 OTHER COOL STUFF
 ---
