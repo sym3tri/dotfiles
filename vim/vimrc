@@ -140,6 +140,9 @@ map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 " Shortcut to toggle spellchecker
 nmap <silent> <leader>s :set spell!<CR>
 
+" Force Saving Files that Require Root Permission
+cmap w!! %!sudo tee > /dev/null %
+
 "-----------------------------------------------------------------------
 " MAC VIM
 "-----------------------------------------------------------------------
