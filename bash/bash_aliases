@@ -11,6 +11,8 @@ alias gpthis='git push origin HEAD:$(git_current_branch)'
 alias gs='git status -sb'
 alias gb='git branch'
 alias gc='git commit -m'
+# A better gitlog
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset" --abbrev-commit'
 
 ##########
 # for work
