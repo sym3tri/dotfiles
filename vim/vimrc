@@ -59,6 +59,8 @@ set hlsearch
 set incsearch
 " no error bells
 set noerrorbells
+" no bell
+set vb
 " Allow specified keys that move the cursor left/right to move to the prev/next line
 set whichwrap+=h,l
 
