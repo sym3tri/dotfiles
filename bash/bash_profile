@@ -1,5 +1,5 @@
 #! /bin/sh
-PATH=$PATH:/usr/local/bin:$HOME/local/bin;
+PATH=$PATH:/usr/local/bin:$HOME/local/bin:$HOME/dev/_bin/google_appengine;
 
 # add env variable for hubalog root dir
 export HUBALOG_ROOT=$HOME/Dev/hubalog
