@@ -1,15 +1,14 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/dotfiles/zsh/oh-my-zsh
+
+# Things to add to path (like this?)
+PATH=$PATH:/usr/local/bin:$HOME/local/bin:/usr/local/bin/google_appengine;
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -29,8 +28,33 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git github brew gem npm osx)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+
+####################
+# aliases
+####################
+alias c="clear"
+alias ls="ls -la"
+alias grep="grep --color=always"
+alias ..="cd .."
+alias ...="cd ../.."
+alias jslint=$HOME/dotfiles/apps/JSLintWrapper/jslint
+
+# git aliases
+alias gpr='open "https://github.com/$(git_current_origin)/pull/new/$(git_current_branch)"'
+#alias gpthis="git push origin HEAD:$(git_current_branch)"
+alias gs="git status -sb"
+alias gb="git branch"
+alias gc="git commit -m"
+alias gco="git checkout"
+# A better gitlog
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset" --abbrev-commit'
+
+# remove old python compiled files
+alias rmpyc='find . -name "*.pyc" -delete'
+
+# vim
+alias vim="mvim -v"
