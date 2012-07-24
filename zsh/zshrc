@@ -36,6 +36,8 @@ source $ZSH/oh-my-zsh.sh
 ####################
 # aliases
 ####################
+alias tmux="TERM=screen-256color-bce tmux"
+
 alias c="clear"
 alias grep="grep --color=always"
 alias ..="cd .."
@@ -56,4 +58,5 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 alias rmpyc='find . -name "*.pyc" -delete'
 
 # vim
-alias vim="mvim -v"
+#alias vim="mvim -v"
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
