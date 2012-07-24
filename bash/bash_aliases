@@ -15,11 +15,6 @@ alias gco='git checkout'
 # A better gitlog
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset" --abbrev-commit'
 
-##########
-# for work
-##########
-alias cdck="cd ~/dev/reach/cloudkick/webapp/site_media"
-
 # remove old python compiled files
 alias rmpyc='find . -name "*.pyc" -delete'
 
