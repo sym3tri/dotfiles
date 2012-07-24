@@ -171,39 +171,39 @@ if has("gui_running")
 endif
 
 " use the OS clipboard
-set clipboard=unnamed
+"set clipboard=unnamed
 
 " Printing
 set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
 
 " Mac Vim specific key mappings
 " -----------------------------
-imap <D-BS> 
-imap <M-BS> 
-imap <M-Down> }
-inoremap <D-Down> <C-End>
-imap <M-Up> {
-inoremap <D-Up> <C-Home>
-noremap! <M-Right> <C-Right>
-noremap! <D-Right> <End>
-noremap! <M-Left> <C-Left>
-noremap! <D-Left> <Home>
-map! <D-v> *
-map gx <Plug>NetrwBrowseX
-map <M-Down> }
-noremap <D-Down> <C-End>
-map <M-Up> {
-noremap <D-Up> <C-Home>
-noremap <M-Right> <C-Right>
-noremap <D-Right> <End>
-noremap <M-Left> <C-Left>
-noremap <D-Left> <Home>
-nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
-vmap <BS> "-d
-vmap <D-x> "*d
-vmap <D-c> "*y
-vmap <D-v> "-d"*P
-nmap <D-v> "*P
+"imap <D-BS> 
+"imap <M-BS> 
+"imap <M-Down> }
+"inoremap <D-Down> <C-End>
+"imap <M-Up> {
+"inoremap <D-Up> <C-Home>
+"noremap! <M-Right> <C-Right>
+"noremap! <D-Right> <End>
+"noremap! <M-Left> <C-Left>
+"noremap! <D-Left> <Home>
+"map! <D-v> *
+"map gx <Plug>NetrwBrowseX
+"map <M-Down> }
+"noremap <D-Down> <C-End>
+"map <M-Up> {
+"noremap <D-Up> <C-Home>
+"noremap <M-Right> <C-Right>
+"noremap <D-Right> <End>
+"noremap <M-Left> <C-Left>
+"noremap <D-Left> <Home>
+"nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+"vmap <BS> "-d
+"vmap <D-x> "*d
+"vmap <D-c> "*y
+"vmap <D-v> "-d"*P
+"nmap <D-v> "*P
 
 "-----------------------------------------------------------------------
 " PLUGINS
