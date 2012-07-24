@@ -171,7 +171,7 @@ if has("gui_running")
 endif
 
 " use the OS clipboard
-"set clipboard=unnamed
+set clipboard=unnamed
 
 " Printing
 set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
@@ -213,8 +213,6 @@ set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
 
 " command-t
 
-" delimitate
-
 " fugitive
 
 " nerdcommenter
@@ -229,13 +227,11 @@ nmap <leader>nf :NERDTreeFind<CR>
 nmap <leader>js :JSLintToggle<CR>
 let $JS_CMD='node'
 
-" supertab
-" user supertab with OmniComplete based on context
-let g:SuperTabDefaultCompletionType = "context"
-
 " snipmate
 
-" vim-surround
+" syntastic
+" use passive mode by default
+let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': ['css'], 'passive_filetypes': ['js'] }
 
 "-----------------------------------------------------------------------
 " COLORS
