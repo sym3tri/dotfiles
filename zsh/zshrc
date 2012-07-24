@@ -37,7 +37,6 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 ####################
 alias c="clear"
-alias ls="ls -la"
 alias grep="grep --color=always"
 alias ..="cd .."
 alias ...="cd ../.."
