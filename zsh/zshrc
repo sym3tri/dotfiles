@@ -38,6 +38,7 @@ source $ZSH/oh-my-zsh.sh
 ####################
 alias tmux="TERM=screen-256color-bce tmux"
 
+alias resource="source $HOME/.zshrc"
 alias c="clear"
 alias grep="grep --color=always"
 alias ..="cd .."
