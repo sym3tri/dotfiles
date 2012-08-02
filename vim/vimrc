@@ -205,6 +205,13 @@ set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
 "vmap <D-v> "-d"*P
 "nmap <D-v> "*P
 
+"set background=dark
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"colorscheme solarized
+
 "-----------------------------------------------------------------------
 " PLUGINS
 "-----------------------------------------------------------------------
@@ -239,11 +246,7 @@ let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': ['css'], 'pass
 
 " color scheme
 set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-colorscheme solarized
+colorscheme grb4
 
 " syntax highlighting
 syn on
@@ -254,7 +257,6 @@ au BufReadPost *.less set syntax=css
 " Pretend handlebars files are html
 au BufNewFile,BufRead *.handlebars set filetype=html
 au BufNewFile,BufRead *.hbs set filetype=html
-
 
 "Higlight current line only in insert mode
 autocmd InsertLeave * set nocursorline
