@@ -97,6 +97,7 @@ set smartindent
 
 " Status Line
 " Show current git branch
+"set laststatus=0
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
