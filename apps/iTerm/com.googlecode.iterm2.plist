@@ -493,9 +493,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>283 64 445 270 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>181 366 924 485 0 0 1440 878 </string>
+	<string>400 352 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>74 31 1277 847 0 0 1440 878 </string>
+	<string>4 345 850 519 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -671,7 +671,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>5.2592158317565918</real>
+			<real>2.5861985683441162</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1042,7 +1042,7 @@
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
-			<real>0.54489582777023315</real>
+			<real>0.43000000715255737</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1204,7 +1204,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.15223245322704315</real>
+			<real>0.033991310745477676</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -2019,7 +2019,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2012-04-10T16:09:00Z</date>
+	<date>2012-07-25T03:50:04Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
