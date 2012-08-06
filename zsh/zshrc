@@ -14,7 +14,7 @@ ZSH_THEME="robbyrussell"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -32,6 +32,12 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+####################
+# functions
+####################
+git_current_branch() {
+  cat "$(git rev-parse --git-dir 2>/dev/null)/HEAD" | sed -e 's/^.*refs\/heads\///'
+}
 
 ####################
 # aliases
@@ -46,8 +52,11 @@ alias ...="cd ../.."
 alias jslint=$HOME/dotfiles/apps/JSLintWrapper/jslint
 
 # git aliases
-alias gpr='open "https://github.com/$(git_current_origin)/pull/new/$(git_current_branch)"'
-#alias gpthis="git push origin HEAD:$(git_current_branch)"
+alias test='if $(git_current_branch) = "master" echo "noooooooooo!" fi'
+
+alias gcpb='echo $(git_current_branch) | pbcopy'
+alias gpthis='git push origin $(git_current_branch)'
+alias gpthisforce='git push -f origin $(git_current_branch)'
 alias gs="git status -sb"
 alias gb="git branch"
 alias gc="git commit -m"
