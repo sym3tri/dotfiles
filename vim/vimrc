@@ -255,6 +255,7 @@ nmap <leader>js :JSLintToggle<CR>
 let $JS_CMD='node'
 
 " SNIPMATE
+nmap <leader>sr :call ReloadAllSnippets()<CR>
 
 " SYNTASTIC
 " use passive mode by default
