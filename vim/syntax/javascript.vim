@@ -1,0 +1,1 @@
+/Users/ed.rooth/dotfiles/vim/vim-javascript-syntax/syntax/javascript.vim
