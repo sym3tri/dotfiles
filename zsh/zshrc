@@ -31,7 +31,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+#plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,6 +47,10 @@ git_current_branch() {
 ####################
 alias tmux="TERM=screen-256color-bce tmux"
 
+# easily edit zshrc
+alias zshrc="vim $HOME/.zshrc"
+# easily edit vimrc
+alias vimrc="vim $HOME/.vimrc"
 alias resource="source $HOME/.zshrc"
 alias c="clear"
 alias grep="grep --color=always"

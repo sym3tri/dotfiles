@@ -1,48 +1,41 @@
-"_______________________________________________________________________
-"   ______     _ _____             _   _                                
-"  |  ____|   | |  __ \           | | | |                               
-"  | |__    __| | |__) |___   ___ | |_| |__         ___  ___  _ __ ___  
-"  |  __|  / _` |  _  // _ \ / _ \| __| '_ \       / __|/ _ \| '_ ` _ \ 
+"______________________________________________________________________________
+"   ______     _ _____             _   _
+"  |  ____|   | |  __ \           | | | |
+"  | |__    __| | |__) |___   ___ | |_| |__         ___  ___  _ __ ___
+"  |  __|  / _` |  _  // _ \ / _ \| __| '_ \       / __|/ _ \| '_ ` _ \
 "  | |____| (_| | | \ \ (_) | (_) | |_| | | |  _  | (__| (_) | | | | | |
 "  |______|\__,_|_|  \_\___/ \___/ \__|_| |_| (_)  \___|\___/|_| |_| |_|
-"_______________________________________________________________________
+"______________________________________________________________________________
 
-"-----------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " QUICK REFERENCE
-"-----------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " help quickref
-"-----------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
-" Pathogen
+" Pathogen manages all plugins
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-
-"-----------------------------------------------------------------------
-" STANDARD VIM
-"-----------------------------------------------------------------------
+"------------------------------------------------------------------------------
+" GENERAL CONFIG
+"------------------------------------------------------------------------------
 set nocompatible
-
 " help language should be English
 set helplang=en
 " lang to use for menu translations
 set langmenu=none
-
 " make backspace work normally on *NIX systems
 set backspace=indent,eol,start
-
 " always save as utf-8
 set fileencodings=utf-8
 set termencoding=utf-8
-
 " Enable filetype detection
 filetype on
 " load filetype specific plugins
 filetype plugin on
-
 " Set to auto read when a file is changed from the outside
 set autoread
-
 " dont wrap text
 set nowrap
 " show line numbers
@@ -63,13 +56,11 @@ set noerrorbells
 set vb
 " Allow specified keys that move the cursor left/right to move to the prev/next line
 set whichwrap+=h,l
-
 " Turn backup off, since most stuff is in git anyway...
 set nobackup
 set nowb
 set noswapfile
-
-" code folding
+" CODE FOLDING
 " fold based on indent
 set foldmethod=indent
 " deepest fold is 10 levels
@@ -77,41 +68,55 @@ set foldnestmax=10
 " no fold by default
 set nofoldenable
 set foldlevel=1
-
 " Autocomplete with OmniComplete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
 " Persistent undo
 set undodir=~/.vim_runtime/undodir
 set undofile
-
-" Tabs
+" TABS
 set expandtab
 set softtabstop=2
 set shiftwidth=2
 set smarttab
 set smartindent
-
-" Status Line
+" STATUS LINE
 " Show current git branch
-"set laststatus=0
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 set listchars+=trail:·
 set listchars+=nbsp:f
+" use the OS clipboard
+set clipboard=unnamed
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
 
-" Set <leader> to comma
-let mapleader=","
+"------------------------------------------------------------------------------
+" COLORS
+"------------------------------------------------------------------------------
+" color scheme
+set background=dark
+colorscheme grb4
+" syntax highlighting
+syn on
+"Higlight current line only in insert mode
+autocmd InsertLeave * set nocursorline
+autocmd InsertEnter * set cursorline
+"Invisible character colors
+highlight NonText guifg=#236360
+highlight SpecialKey guifg=#044A46
+" warning for beyond the 80th column
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
-" clear search highlights
-noremap <silent><Leader>/ :nohls<CR>
-
+"------------------------------------------------------------------------------
+" Functions
+"------------------------------------------------------------------------------
 " function to strip all trailing spaces
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -133,59 +138,61 @@ if has("autocmd")
     \ endif
 endif
 
+"------------------------------------------------------------------------------
 " SHORTCUT KEY MAPPINGS
-" ---------------------
-
-" shortcut to change windows (and maximize if up/down_)
+"------------------------------------------------------------------------------
+" Set <leader> to comma
+let mapleader=","
+" clear search highlights
+noremap <silent><Leader>/ :nohls<CR>
+" shortcut to change windows (and maximize if up/down)
 map <C-H> <C-w>h
 map <C-L> <C-w>l
 map <C-K> <C-W>k<C-W>_
 map <C-J> <C-W>j<C-W>_
-
 " Shortcut to rapidly toggle `set list` which will show/hide hidden chars
 nmap <leader>l :set list!<CR>
 set list
-
 " map shourtcut to trim all trailing to: \$
 nmap <silent> <leader>$ :call <SID>StripTrailingWhitespaces()<CR>
-
 " Shortcut to initialize edit command in dir of current file
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
-
 " Shortcut to toggle spellchecker
 nmap <silent> <leader>s :set spell!<CR>
-
 " Force Saving Files that Require Root Permission
 cmap w!! %!sudo tee > /dev/null %
+" Resize vertical splits more easily
+" TODO: fix this
+"nmap <silent><leader>\> 4<c-w>\>
+"nmap <silent><leader>\> 4<c-w>\>
+" Resize horizontal splits more easily
+nmap <silent><Leader>- 4<c-w>-
+nmap <silent><Leader>= 4<c-w>+
 
-"-----------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " MAC VIM
-"-----------------------------------------------------------------------
-
-" font and size
-set guifont=Inconsolata:h16
-
-set guitablabel=%M%t
-
-" enable use of the mouse
-set mouse=a
-
-" Disable toolbar
+"------------------------------------------------------------------------------
+" gui only options
 if has("gui_running")
-    set guioptions=egmrt
-
-    " transparency, hellz yeah
-    set transparency=8
+  set guioptions=egmrt
+  " transparency, hellz yeah
+  set transparency=8
+  " font and size
+  set guifont=Inconsolata:h16
+  " tab label
+  set guitablabel=%M%t
+  " enable use of the mouse
+  set mouse=a
+  " Printing
+  set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
+  " use solarized color scheme
+  let g:solarized_termtrans=1
+  let g:solarized_termcolors=256
+  let g:solarized_contrast="high"
+  let g:solarized_visibility="high"
+  colorscheme solarized
 endif
 
-" use the OS clipboard
-set clipboard=unnamed
-
-" Printing
-set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
-
-" Mac Vim specific key mappings
-" -----------------------------
 "imap <D-BS> 
 "imap <M-BS> 
 "imap <M-Down> }
@@ -213,93 +220,55 @@ set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
 "vmap <D-v> "-d"*P
 "nmap <D-v> "*P
 
-"set background=dark
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"colorscheme solarized
+" ?????? i dont know what this is. it came with mac vim ?????????
+"if &cp | set nocp | endif
+"let s:cpo_save=&cpo
+"set cpo&vim
+"let &cpo=s:cpo_save
+"unlet s:cpo_save
+" ???????????????
 
-"-----------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " PLUGINS
-"-----------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
-" closetag
+" CLOSETAG
 
-" command-t
+" COMMAND-T
 
-" fugitive
+" FUGITIVE
 
-" nerdcommenter
+" NERDCOMMENTER
 
-" nerdtree
+" NERDTREE
 let NERDTreeShowHidden=1
 nmap <leader>nn :NERDTree<CR>
 nmap <leader>nr :NERDTreeMirror<CR>
 nmap <leader>nf :NERDTreeFind<CR>
+nmap <leader>nc :NERDTree<CR><C-w>p:NERDTreeFind<CR>
 
-" jslint.vim
+" JSLINT.VIM
 nmap <leader>js :JSLintToggle<CR>
 let $JS_CMD='node'
 
-" snipmate
+" SNIPMATE
 
-" syntastic
+" SYNTASTIC
 " use passive mode by default
 let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': ['css'], 'passive_filetypes': ['js'] }
 
-"-----------------------------------------------------------------------
-" COLORS
-"-----------------------------------------------------------------------
-
-" color scheme
-set background=dark
-colorscheme grb4
-
-" syntax highlighting
-syn on
-
-" specify syntax language for non-standard file types
-au BufReadPost *.less set syntax=css
-
-" Pretend handlebars files are html
-au BufNewFile,BufRead *.handlebars set filetype=html
-au BufNewFile,BufRead *.hbs set filetype=html
-
-"Higlight current line only in insert mode
-autocmd InsertLeave * set nocursorline
-autocmd InsertEnter * set cursorline
-
-"Invisible character colors
-highlight NonText guifg=#236360
-highlight SpecialKey guifg=#044A46
-
-" warning for beyond the 80th column
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-
-"_______________________________________________________________________
-
-
-"-----------------------------------------------------------------------
-" WORK SPECIFIC
-"-----------------------------------------------------------------------
+"------------------------------------------------------------------------------
+" FUNNY FILE TYPES
+"------------------------------------------------------------------------------
 " set highlighting for Scons files to python
 autocmd BufReadPre SConstruct set filetype=python
 autocmd BufReadPre SConscript set filetype=python
-
 " use 4 space tabs for python files
 au FileType python setl tabstop=4
 au FileType python setl shiftwidth=4
-
-"_______________________________________________________________________
-
-
-
-" ???????????????
-if &cp | set nocp | endif
-let s:cpo_save=&cpo
-set cpo&vim
-let &cpo=s:cpo_save
-unlet s:cpo_save
-" ???????????????
+" specify syntax language for non-standard file types
+au BufReadPost *.less set syntax=css
+" Pretend handlebars files are html
+au BufNewFile,BufRead *.handlebars set filetype=html
+au BufNewFile,BufRead *.hbs set filetype=html
+au BufNewFile,BufRead *.soy set filetype=html
