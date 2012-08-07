@@ -55,3 +55,6 @@
 [submodule "vim/vim-javascript-syntax"]
 	path = vim/vim-javascript-syntax
 	url = git://github.com/jelera/vim-javascript-syntax.git
+[submodule "vim/bundle/vim-gummybears-colorscheme"]
+	path = vim/bundle/vim-gummybears-colorscheme
+	url = git://github.com/jelera/vim-gummybears-colorscheme.git

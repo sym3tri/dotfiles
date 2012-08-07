@@ -101,7 +101,8 @@ vnoremap > >gv
 "------------------------------------------------------------------------------
 " color scheme
 set background=dark
-colorscheme grb4
+"colorscheme grb4
+colorscheme gummybears
 " syntax highlighting
 syn on
 "Higlight current line only in insert mode
