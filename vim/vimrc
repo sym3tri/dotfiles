@@ -232,6 +232,9 @@ endif
 " PLUGINS
 "------------------------------------------------------------------------------
 
+" TAGBAR
+nnoremap <silent> <leader>t :TagbarToggle<CR>
+
 " CLOSETAG
 
 " COMMAND-T
