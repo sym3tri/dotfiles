@@ -161,6 +161,13 @@ map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 nmap <silent> <leader>s :set spell!<CR>
 " Force Saving Files that Require Root Permission
 cmap w!! %!sudo tee > /dev/null %
+" Resize vertical splits more easily
+" TODO: fix this
+"nmap <silent><leader>\> 4<c-w>\>
+"nmap <silent><leader>\> 4<c-w>\>
+" Resize horizontal splits more easily
+nmap <silent><Leader>- 4<c-w>-
+nmap <silent><Leader>= 4<c-w>+
 
 "------------------------------------------------------------------------------
 " MAC VIM
