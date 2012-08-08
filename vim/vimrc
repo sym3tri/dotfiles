@@ -94,9 +94,6 @@ set listchars+=trail:·
 set listchars+=nbsp:f
 " use the OS clipboard
 set clipboard=unnamed
-" Reselect visual block after indent/outdent
-vnoremap < <gv
-vnoremap > >gv
 " Maintain more context around the cursor
 set scrolloff=3
 
