@@ -1,0 +1,1 @@
+/Users/ed/dotfiles/vim/bundle/vim-golang/ftplugin/go/godoc.vim

@@ -275,6 +275,11 @@ autocmd BufReadPre SConscript set filetype=python
 " use 4 space tabs for python files
 au FileType python setl tabstop=4
 au FileType python setl shiftwidth=4
+" Go files use tabs
+au FileType go setl tabstop=4
+au FileType go setl shiftwidth=4
+au FileType go setl noexpandtab
+
 " specify syntax language for non-standard file types
 au BufReadPost *.less set syntax=css
 " Pretend handlebars files are html
