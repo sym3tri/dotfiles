@@ -34,6 +34,8 @@ set termencoding=utf-8
 filetype on
 " load filetype specific plugins
 filetype plugin on
+" different indentation by filetype
+filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 " dont wrap text
@@ -95,6 +97,8 @@ set clipboard=unnamed
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
+" Maintain more context around the cursor
+set scrolloff=3
 
 "------------------------------------------------------------------------------
 " COLORS
