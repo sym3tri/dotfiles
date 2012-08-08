@@ -15,6 +15,8 @@ INSTALL
 - create symlinks from user dir to all relevent files
 - point iTerm to the plist file
 - install Inconsolata font
+- Setup symlinks
+- run `brew install ctags-exuberant` for tagbar plugin support
 
 Install new vim plugin: `git submodule add git://github.com/<plugin-repo>.git vim/bundle/<plugin-name>`
 
