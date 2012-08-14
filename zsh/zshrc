@@ -2,7 +2,7 @@
 ZSH=$HOME/dotfiles/zsh/oh-my-zsh
 
 # Things to add to path (like this?)
-PATH=$PATH:/usr/local/bin:$HOME/local/bin:/usr/local/bin/google_appengine:$HOME/dotfiles/shell;
+PATH=$PATH:/usr/local/bin:$HOME/local/bin:/usr/local/bin/google_appengine:$HOME/dotfiles/shell:$HOME/.rvm/bin;
 
 # rupa z
 . ~/dotfiles/shell/z.sh
@@ -47,6 +47,8 @@ function git_prompt_info() {
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
+# RVM
+source $HOME/.rvm/scripts/rvm
 
 ####################
 # aliases
