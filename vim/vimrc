@@ -154,8 +154,8 @@ map <C-K> <C-W>k<C-W>_
 map <C-J> <C-W>j<C-W>_
 
 " map easier shortcut for switching tabs
-noremap <C-p> :tabp<CR>
-noremap <C-n> :tabn<CR>
+noremap <C-[> :tabp<CR>
+noremap <C-]> :tabn<CR>
 
 " Shortcut to rapidly toggle `set list` which will show/hide hidden chars
 nmap <leader>l :set list!<CR>
