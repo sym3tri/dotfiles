@@ -50,6 +50,9 @@ function git_prompt_info() {
 # RVM
 source $HOME/.rvm/scripts/rvm
 
+# work vm stuff
+source $HOME/reachvm/devvm_setup.sh
+
 ####################
 # aliases
 ####################
