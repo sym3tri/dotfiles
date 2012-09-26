@@ -154,8 +154,8 @@ map <C-K> <C-W>k<C-W>_
 map <C-J> <C-W>j<C-W>_
 
 " map easier shortcut for switching tabs
-noremap <C-[> :tabp<CR>
-noremap <C-]> :tabn<CR>
+noremap <leader>j :tabp<CR>
+noremap <leader>k :tabn<CR>
 
 " Shortcut to rapidly toggle `set list` which will show/hide hidden chars
 nmap <leader>l :set list!<CR>
@@ -258,7 +258,7 @@ nmap <leader>nf :NERDTreeFind<CR>
 nmap <leader>nc :NERDTree<CR><C-w>p:NERDTreeFind<CR>
 
 " JSLINT.VIM
-nmap <leader>js :JSLintToggle<CR>
+"nmap <leader>s :JSLintToggle<CR>
 let $JS_CMD='node'
 
 " SNIPMATE
