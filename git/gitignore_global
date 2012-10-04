@@ -2,3 +2,4 @@
 *.log
 *.swp
 my_local_settings.py
+eds_env_shellscript
