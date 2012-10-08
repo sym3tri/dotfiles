@@ -58,6 +58,3 @@
 [submodule "vim/bundle/vim-gummybears-colorscheme"]
 	path = vim/bundle/vim-gummybears-colorscheme
 	url = git://github.com/jelera/vim-gummybears-colorscheme.git
-[submodule "vim/bundle/jshint"]
-	path = vim/bundle/jshint
-	url = git://github.com/wookiehangover/jshint.vim.git

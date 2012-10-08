@@ -2,7 +2,9 @@
 ZSH=$HOME/dotfiles/zsh/oh-my-zsh
 
 # Things to add to path (like this?)
-PATH=$PATH:/usr/local/bin:$HOME/local/bin:/usr/local/bin/google_appengine:$HOME/dotfiles/shell:$HOME/.rvm/bin;
+PATH=/bin:/usr/local/bin:$PATH:/usr/bin:/usr/local/bin/google_appengine:$HOME/dotfiles/shell:$HOME/.rvm/bin;
+
+
 
 # rupa z
 . ~/dotfiles/shell/z.sh
