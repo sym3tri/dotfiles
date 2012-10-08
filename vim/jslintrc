@@ -8,9 +8,10 @@ white: true
 */
 
 /*global
+document,
+window,
 define,
 require,
-window,
 jQuery,
 $,
 d3,
