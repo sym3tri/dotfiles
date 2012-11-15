@@ -1,12 +1,22 @@
 # JSDoc comments
 snippet /*
-	/*
+	/**
 	 * ${1:description}
 	 * @param {${2:parm}} ${3} ${4}
 	 */
 
-snippet req
-	goog.require('${1}');
+snippet l
+	console.log('${1}');
+
+# requirejs define()
+snippet def
+	define([
+	  '${1:dependency}'
+	],
+	function (${2:alias}) {
+	  'use strict';
+	  ${3:// body...}
+	});
 
 snippet desc
 	describe('${1}', function () {
