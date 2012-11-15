@@ -24,7 +24,7 @@ precmd() {
   vcs_info
 }
 setopt prompt_subst
-PROMPT='${vcs_info_msg_0_} /%c ☆ '
+PROMPT='${vcs_info_msg_0_} %c/ ☆ '
 
 
 ####################
