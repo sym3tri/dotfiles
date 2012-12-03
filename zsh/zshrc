@@ -33,7 +33,7 @@ PROMPT='${vcs_info_msg_0_} %c/ ☆ '
 # RVM
 source $HOME/.rvm/scripts/rvm
 # work vm stuff
-source $HOME/reachvm/devvm_setup.sh
+#source $HOME/reachvm/devvm_setup.sh
 
 
 ####################
