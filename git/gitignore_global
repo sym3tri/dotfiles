@@ -2,4 +2,5 @@
 *.log
 *.swp
 my_local_settings.py
+my_start_plovr.sh
 eds_env_shellscript
