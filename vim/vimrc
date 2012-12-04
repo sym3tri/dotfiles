@@ -211,41 +211,6 @@ if has("gui_running")
   colorscheme solarized
 endif
 
-"imap <D-BS> 
-"imap <M-BS> 
-"imap <M-Down> }
-"inoremap <D-Down> <C-End>
-"imap <M-Up> {
-"inoremap <D-Up> <C-Home>
-"noremap! <M-Right> <C-Right>
-"noremap! <D-Right> <End>
-"noremap! <M-Left> <C-Left>
-"noremap! <D-Left> <Home>
-"map! <D-v> *
-"map gx <Plug>NetrwBrowseX
-"map <M-Down> }
-"noremap <D-Down> <C-End>
-"map <M-Up> {
-"noremap <D-Up> <C-Home>
-"noremap <M-Right> <C-Right>
-"noremap <D-Right> <End>
-"noremap <M-Left> <C-Left>
-"noremap <D-Left> <Home>
-"nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
-"vmap <BS> "-d
-"vmap <D-x> "*d
-"vmap <D-c> "*y
-"vmap <D-v> "-d"*P
-"nmap <D-v> "*P
-
-" ?????? i dont know what this is. it came with mac vim ?????????
-"if &cp | set nocp | endif
-"let s:cpo_save=&cpo
-"set cpo&vim
-"let &cpo=s:cpo_save
-"unlet s:cpo_save
-" ???????????????
-
 "------------------------------------------------------------------------------
 " PLUGINS
 "------------------------------------------------------------------------------
@@ -277,7 +242,7 @@ nmap <leader>sr :call ReloadAllSnippets()<CR>
 
 " SYNTASTIC
 " use passive mode by default
-let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': ['css'], 'passive_filetypes': ['js'] }
+"let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': ['css'], 'passive_filetypes': ['js'] }
 
 "------------------------------------------------------------------------------
 " FUNNY FILE TYPES
