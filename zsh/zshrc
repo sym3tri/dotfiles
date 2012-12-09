@@ -11,6 +11,9 @@ export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 export TERM=xterm-256color
 
+# history
+export HISTSIZE=10000 SAVEHIST=10000
+
 
 ####################
 # git prompt
@@ -18,13 +21,13 @@ export TERM=xterm-256color
 # load vcs_info module
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' formats "%{$fg[cyan]%}(%r)%{$reset_color%}[%{$fg[magenta]%}%b%{$reset_color%}]"
+zstyle ':vcs_info:git*' formats "[%{$fg[magenta]%}%b%{$reset_color%}]"
 
 precmd() {
   vcs_info
 }
 setopt prompt_subst
-PROMPT='${vcs_info_msg_0_} %c/ ☆ '
+PROMPT='%c ${vcs_info_msg_0_} ☆  '
 
 
 ####################
