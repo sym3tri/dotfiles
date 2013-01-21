@@ -24,10 +24,5 @@ expect,
 spyOn,
 beforeEach,
 afterEach,
-sinon,
-setFixtures,
-gettext,
-goog,
-ck,
-servo
+angular
 */
