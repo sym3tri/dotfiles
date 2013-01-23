@@ -13,39 +13,47 @@ snippet def
 	define([
 	  '${1:dependency}'
 	],
-	function (${2:alias}) {
+	function(${2:alias}) {
 	  'use strict';
-	  ${3:// body...}
+	
 	});
 
 snippet desc
-	describe('${1}', function () {
-	  it('${2}', function () {
+	describe('${1}', function() {
+	
+	  it('${2}', function() {
 	    ${3}
 	  });
+	
 	});
 
 snippet it
-	it('${1}', function () {
+	it('${1}', function() {
 	  ${2}
 	});
 
 snippet spec
-	describe('${1}', function () {
+	describe('${1}', function() {
 	
 	  var ${2:globals};
 	
-	  beforeEach(function () {
+	  beforeEach(function() {
 	
 	  });
 	
-	  afterEach(function () {
+	  afterEach(function() {
 	
 	  });
 	
-	  it('${3}', function () {
-	
+	  it('${3}', function() {
 	    expect(false).toBe(true);
+	  });
+	
+	  describe('', function() {
+	
+	    it('${3}', function() {
+	      expect(false).toBe(true);
+	    });
 	
 	  });
 	
