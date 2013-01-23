@@ -4,7 +4,8 @@ maxlen: 80,
 node: true,
 sloppy: true,
 nomen: true,
-white: true
+white: true,
+es5: true
 */
 
 /*global
