@@ -20,6 +20,7 @@ call pathogen#helptags()
 "------------------------------------------------------------------------------
 " GENERAL CONFIG
 "------------------------------------------------------------------------------
+set shell=/usr/local/bin/zsh
 set nocompatible
 " help language should be English
 set helplang=en

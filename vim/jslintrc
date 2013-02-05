@@ -24,5 +24,6 @@ expect,
 spyOn,
 beforeEach,
 afterEach,
-angular
+angular,
+grunt
 */
