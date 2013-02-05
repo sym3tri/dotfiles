@@ -1,5 +1,5 @@
 # Things to add to path (like this?)
-PATH=/bin:/usr/local/bin:$PATH:/usr/bin:/usr/local/bin/google_appengine:$HOME/dotfiles/shell:$HOME/.rvm/bin;
+PATH=/bin:/usr/local/bin:/usr/bin:$HOME/dotfiles/shell:$HOME/.rvm/bin:$PATH;
 
 ####################
 # customizations
@@ -75,6 +75,7 @@ alias gc="git commit -m"
 alias gco="git checkout"
 alias gd="git diff"
 alias gr="git rebase"
+alias ga="git add"
 
 # A better gitlog
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset" --abbrev-commit'
