@@ -239,6 +239,9 @@ let $JS_CMD='node'
 " SNIPMATE
 nmap <leader>sr :call ReloadAllSnippets()<CR>
 
+" CTRL-P
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.git/*,*/node_modules/*
+
 " SYNTASTIC
 " use passive mode by default
 "let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': ['css'], 'passive_filetypes': ['js'] }
