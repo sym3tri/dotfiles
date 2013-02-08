@@ -18,11 +18,7 @@ export HISTSIZE=10000 SAVEHIST=10000
 ####################
 # git prompt
 ####################
-<<<<<<< HEAD
-# for git autocompletion
-=======
 # For git auto-completion
->>>>>>> a8beb8543fdbb5400946ff61ccef2733d2f610c5
 autoload -U compinit && compinit
 
 # load vcs_info module
