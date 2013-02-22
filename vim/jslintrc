@@ -26,5 +26,7 @@ spyOn,
 beforeEach,
 afterEach,
 angular,
-grunt
+grunt,
+THREE,
+requestAnimationFrame
 */
