@@ -215,10 +215,13 @@ endif
 "------------------------------------------------------------------------------
 
 " SHOW MARKS
+let g:showmarks_enable=0
+let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 highlight ShowMarksHLl ctermfg=white ctermbg=black
 highlight ShowMarksHLu ctermfg=white ctermbg=black
 highlight ShowMarksHLo ctermfg=59 ctermbg=black
 highlight ShowMarksHLm ctermfg=blue ctermbg=black
+
 
 " TAGBAR
 nnoremap <silent> <leader>t :TagbarToggle<CR>
