@@ -54,6 +54,7 @@ PROMPT='%c ${vcs_info_msg_0_} ☆  '
 ####################
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/tmp --allow-file-access-from-files"
 alias tmux="TERM=screen-256color-bce tmux"
+alias drop="cd ~/Dropbox"
 
 # easily edit zshrc
 alias zshrc="vim $HOME/.zshrc"
