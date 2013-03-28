@@ -20,6 +20,7 @@ INSTALL
 
 Install new vim plugin: `git submodule add git://github.com/<plugin-repo>.git vim/bundle/<plugin-name>`
 
+Update submodules: `git submodule foreach git pull origin master`
 
 OTHER COOL STUFF
 ---
