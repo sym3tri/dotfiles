@@ -1,5 +1,5 @@
 # Things to add to path (like this?)
-PATH=/bin:/usr/local/bin:/usr/bin:$HOME/dotfiles/shell:$HOME/.rvm/bin:$PATH;
+PATH=/bin:/usr/local/bin:/usr/bin:$HOME/dotfiles/shell:$PATH;
 
 ####################
 # customizations
@@ -37,9 +37,7 @@ PROMPT='%c ${vcs_info_msg_0_} ☆  '
 # load external configs
 ####################
 # RVM
-#source $HOME/.rvm/scripts/rvm
-# work vm stuff
-#source $HOME/reachvm/devvm_setup.sh
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 
 ####################
