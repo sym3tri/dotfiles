@@ -85,3 +85,5 @@ alias rmpyc='find . -name "*.pyc" -delete'
 # vim
 #alias vim="mvim -v"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
