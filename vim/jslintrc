@@ -28,5 +28,6 @@ afterEach,
 angular,
 grunt,
 THREE,
-requestAnimationFrame
+requestAnimationFrame,
+inject
 */
