@@ -41,3 +41,10 @@ chsh -s $(which zsh)
 echo "vim plugins"
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim +BundleInstall +qall
+
+echo "node modules"
+npm install -g simple
+npm install -g bower
+npm install -g grunt-cli
+npm install -g express
+
