@@ -1,6 +1,6 @@
 ABOUT
 -----
-All my dotfiles for my terminal based and vim life.
+All my dotfiles for my terminal and vim etc.
 
 Thanks to mirnazim for this:
 http://mirnazim.org/writings/vim-plugins-i-use/   
@@ -11,12 +11,10 @@ INSTALL
 -------
 
 - `git clone` this repo
-- run `git submodule init && git submodule update`
-- create symlinks from user dir to all relevent files
+- install deps listed in new-setup.sh script
+- run the new-setup.sh script
 - point iTerm to the plist file
 - install Inconsolata font
-- Setup symlinks
-- run `brew install ctags-exuberant` for tagbar plugin support
 
 Install new vim plugin: `git submodule add git://github.com/<plugin-repo>.git vim/bundle/<plugin-name>`
 

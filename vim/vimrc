@@ -4,14 +4,10 @@
 " help quickref
 "------------------------------------------------------------------------------
 
-" Pathogen manages all plugins
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
 "------------------------------------------------------------------------------
 " GENERAL CONFIG
 "------------------------------------------------------------------------------
-set shell=/usr/local/bin/zsh
+set shell=/bin/zsh
 set nocompatible
 " help language should be English
 set helplang=en
@@ -23,7 +19,8 @@ set backspace=indent,eol,start
 set fileencodings=utf-8
 set termencoding=utf-8
 " Enable filetype detection
-filetype on
+" filetype on
+filetype off
 " load filetype specific plugins
 filetype plugin on
 " different indentation by filetype
@@ -84,16 +81,13 @@ set listchars+=trail:·
 set listchars+=nbsp:f
 " use the OS clipboard
 set clipboard=unnamed
+
 " Maintain more context around the cursor
 set scrolloff=3
 
 "------------------------------------------------------------------------------
 " COLORS
 "------------------------------------------------------------------------------
-" color scheme
-set background=dark
-"colorscheme grb4
-colorscheme gummybears
 " syntax highlighting
 syn on
 "Higlight current line only in insert mode
@@ -177,6 +171,56 @@ nmap <leader>" @q
 let @w = 'ciw''"''B'
 nmap <leader>' @w
 
+
+"------------------------------------------------------------------------------
+" FUNNY FILE TYPES
+"------------------------------------------------------------------------------
+" set highlighting for Scons files to python
+autocmd BufReadPre SConstruct set filetype=python
+autocmd BufReadPre SConscript set filetype=python
+" use 4 space tabs for python files
+au FileType python setl tabstop=4
+au FileType python setl shiftwidth=4
+" Go files use tabs
+au FileType go setl tabstop=4
+au FileType go setl shiftwidth=4
+au FileType go setl noexpandtab
+
+" specify syntax language for non-standard file types
+au BufReadPost *.less set syntax=css
+" Pretend handlebars files are html
+au BufNewFile,BufRead *.handlebars set filetype=html
+au BufNewFile,BufRead *.hbs set filetype=html
+au BufNewFile,BufRead *.soy set filetype=html
+
+
+"------------------------------------------------------------------------------
+" Vundle manages plugins
+"------------------------------------------------------------------------------
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle required! 
+Bundle 'gmarik/vundle'
+
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'jelera/vim-gummybears-colorscheme'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'docunext/closetag.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'majutsushi/tagbar'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'bling/vim-airline'
+
+" vim-scripts repos
+Bundle 'ShowMarks'
+
+
 "------------------------------------------------------------------------------
 " MAC VIM
 "------------------------------------------------------------------------------
@@ -201,9 +245,15 @@ if has("gui_running")
   colorscheme solarized
 endif
 
+
 "------------------------------------------------------------------------------
 " PLUGINS
 "------------------------------------------------------------------------------
+
+" gummybear colors
+colorscheme gummybears
+" make background dark
+hi Normal ctermbg=16
 
 " SHOW MARKS
 let g:showmarks_enable=0
@@ -218,8 +268,6 @@ highlight ShowMarksHLm ctermfg=blue ctermbg=black
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 
 " CLOSETAG
-
-" COMMAND-T
 
 " FUGITIVE
 
@@ -246,23 +294,3 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.git/*,*/node_modules/*,*app/component
 " use passive mode by default
 "let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': ['css'], 'passive_filetypes': ['js'] }
 
-"------------------------------------------------------------------------------
-" FUNNY FILE TYPES
-"------------------------------------------------------------------------------
-" set highlighting for Scons files to python
-autocmd BufReadPre SConstruct set filetype=python
-autocmd BufReadPre SConscript set filetype=python
-" use 4 space tabs for python files
-au FileType python setl tabstop=4
-au FileType python setl shiftwidth=4
-" Go files use tabs
-au FileType go setl tabstop=4
-au FileType go setl shiftwidth=4
-au FileType go setl noexpandtab
-
-" specify syntax language for non-standard file types
-au BufReadPost *.less set syntax=css
-" Pretend handlebars files are html
-au BufNewFile,BufRead *.handlebars set filetype=html
-au BufNewFile,BufRead *.hbs set filetype=html
-au BufNewFile,BufRead *.soy set filetype=html
