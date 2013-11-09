@@ -4,7 +4,9 @@ All my dotfiles for my terminal and vim etc.
 
 Thanks to mirnazim for this:
 http://mirnazim.org/writings/vim-plugins-i-use/   
-That article inspired this way of organizing my dev settings.
+That article inspired this way of organizing my dev settings.  
+
+Now using vundle to avoid submodules.
 
 
 INSTALL
@@ -16,9 +18,6 @@ INSTALL
 - point iTerm to the plist file
 - install Inconsolata font
 
-Install new vim plugin: `git submodule add git://github.com/<plugin-repo>.git vim/bundle/<plugin-name>`
-
-Update submodules: `git submodule foreach git pull origin master`
 
 OTHER COOL STUFF
 ---
