@@ -206,6 +206,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'scrooloose/nerdtree'
 Bundle 'jelera/vim-gummybears-colorscheme'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'docunext/closetag.vim'
