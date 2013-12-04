@@ -280,6 +280,9 @@ nmap <leader>nn :NERDTree<CR>
 nmap <leader>nr :NERDTreeMirror<CR>
 nmap <leader>nf :NERDTreeFind<CR>
 nmap <leader>nc :NERDTree<CR><C-w>p:NERDTreeFind<CR>
+" hide files from NERDTree
+let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.DS_Store$']
 
 " JSLINT.VIM
 "nmap <leader>s :JSLintToggle<CR>
