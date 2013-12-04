@@ -207,7 +207,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'scrooloose/nerdtree'
-Bundle 'jelera/vim-gummybears-colorscheme'
+Bundle 'flazz/vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'docunext/closetag.vim'
 Bundle 'msanders/snipmate.vim'
@@ -251,8 +251,8 @@ endif
 " PLUGINS
 "------------------------------------------------------------------------------
 
-" gummybear colors
-colorscheme gummybears
+" set color scheme
+colorscheme jellybeans
 " make background dark
 hi Normal ctermbg=16
 
