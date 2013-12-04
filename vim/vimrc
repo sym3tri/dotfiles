@@ -204,19 +204,20 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-Bundle 'tpope/vim-fugitive'
+Bundle 'docunext/closetag.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'editorconfig/editorconfig-vim'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'scrooloose/nerdtree'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'docunext/closetag.vim'
 Bundle 'msanders/snipmate.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'jnwhiteh/vim-golang'
 Bundle 'majutsushi/tagbar'
-Bundle 'jelera/vim-javascript-syntax'
 Bundle 'bling/vim-airline'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'tpope/vim-fugitive'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'plasticboy/vim-markdown'
 
 " vim-scripts repos
 Bundle 'ShowMarks'
