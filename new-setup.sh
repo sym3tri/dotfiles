@@ -47,4 +47,5 @@ npm install -g simple
 npm install -g bower
 npm install -g grunt-cli
 npm install -g express
+npm install -g jshint
 

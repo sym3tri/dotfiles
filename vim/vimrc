@@ -207,6 +207,7 @@ Bundle 'gmarik/vundle'
 Bundle 'docunext/closetag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'Shutnik/jshint2.vim'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'msanders/snipmate.vim'
@@ -272,6 +273,8 @@ nnoremap <silent> <leader>t :TagbarToggle<CR>
 " CLOSETAG
 
 " FUGITIVE
+
+" JSHint
 
 " NERDCOMMENTER
 
