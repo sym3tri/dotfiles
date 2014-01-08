@@ -4,10 +4,15 @@ snippet /*
 	 * ${1:description}
 	 * @param {${2:parm}} ${3} ${4}
 	 */
-
 snippet l
 	console.log(${1});
-
+#
+# anonymous function
+snippet fn
+	function() {
+	  ${1}
+	}
+#
 # requirejs define()
 snippet def
 	define([
@@ -17,7 +22,7 @@ snippet def
 	  'use strict';
 	
 	});
-
+#
 snippet desc
 	describe('${1}', function() {
 	
@@ -26,12 +31,12 @@ snippet desc
 	  });
 	
 	});
-
+#
 snippet it
 	it('${1}', function() {
 	  ${2}
 	});
-
+#
 snippet spec
 	describe('${1}', function() {
 	
@@ -58,7 +63,7 @@ snippet spec
 	  });
 	
 	});
-
+#
 snippet bef
 	beforeEach(function() {
 	  ${1}
