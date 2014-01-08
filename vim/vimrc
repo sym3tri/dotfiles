@@ -219,6 +219,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'rking/ag.vim'
 
 " vim-scripts repos
 Bundle 'ShowMarks'
