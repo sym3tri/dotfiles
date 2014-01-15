@@ -17,6 +17,14 @@ export HISTSIZE=10000 SAVEHIST=10000
 # increase OS limit of concurrently open files
 ulimit -n 512
 
+# use vim mode & with sane settings
+# http://dougblack.io/words/zsh-vi-mode.html
+bindkey -v
+export KEYTIMEOUT=1
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+
+
 ####################
 # git prompt
 ####################
