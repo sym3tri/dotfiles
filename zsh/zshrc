@@ -1,8 +1,15 @@
 # Things to add to path (like this?)
-PATH=/bin:/usr/local/bin:/usr/bin:$HOME/dotfiles/shell:$PATH;
+PATH=/bin:/usr/local/bin:/usr/bin:$HOME/dotfiles/shell:$HOME/.rvm/bin:$PATH;
 
 ####################
-# customizations
+# OSX Settings
+####################
+# increase OS limit of concurrently open files
+ulimit -n 512
+
+
+####################
+# zsh customizations
 ####################
 # make sure colors show up in iTerm
 autoload -U colors
@@ -19,8 +26,6 @@ setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
-# increase OS limit of concurrently open files
-ulimit -n 512
 
 # use vim mode & with sane settings
 # http://dougblack.io/words/zsh-vi-mode.html
@@ -68,16 +73,18 @@ PROMPT='%c ${vcs_info_msg_0_} ☆  '
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/tmp --allow-file-access-from-files"
 alias tmux="TERM=screen-256color-bce tmux"
 alias drop="cd ~/Dropbox"
-
 # easily edit zshrc
 alias zshrc="vim $HOME/.zshrc"
 # easily edit vimrc
 alias vimrc="vim $HOME/.vimrc"
 alias resource="source $HOME/.zshrc"
-alias c="clear"
 alias grep="grep --color=always"
 alias ..="cd .."
 alias ...="cd ../.."
+# remove old python compiled files
+alias rmpyc='find . -name "*.pyc" -delete'
+# vim
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 
 # git aliases
 alias gcpb='echo $(git_current_branch) | pbcopy'
@@ -89,15 +96,5 @@ alias gco="git checkout"
 alias gd="git diff"
 alias gr="git rebase"
 alias ga="git add"
-
 # A better gitlog
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset" --abbrev-commit'
-
-# remove old python compiled files
-alias rmpyc='find . -name "*.pyc" -delete'
-
-# vim
-#alias vim="mvim -v"
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
