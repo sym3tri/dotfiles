@@ -68,3 +68,35 @@ snippet bef
 	beforeEach(function() {
 	  ${1}
 	});
+# angular directive
+snippet ngd
+	/**
+	 * @fileoverview
+	 * ${1}
+	 *
+	 * EXAMPLE USAGE:
+	 *
+	 *
+	 */
+	
+	'use strict';
+	
+	angular.module('${2:module}').directive('${3:name}', function(${4:injectables}) {
+	
+	  return {
+	    templateUrl: '',
+	    transclude: false,
+	    restrict: 'E',
+	    replace: true,
+	    scope: {
+	
+	    },
+	    link: function postLink(scope, elem, attrs) {
+	
+	      elem.on('$destroy', function() {
+	
+	      });
+	    }
+	  };
+	
+	});
