@@ -12,7 +12,12 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 export TERM=xterm-256color
 
 # history
-export HISTSIZE=10000 SAVEHIST=10000
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE=~/.zsh_history
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 # increase OS limit of concurrently open files
 ulimit -n 512
