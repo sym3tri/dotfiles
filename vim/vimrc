@@ -191,7 +191,6 @@ au BufReadPost *.less set syntax=css
 " Pretend handlebars files are html
 au BufNewFile,BufRead *.handlebars set filetype=html
 au BufNewFile,BufRead *.hbs set filetype=html
-au BufNewFile,BufRead *.soy set filetype=html
 
 
 "------------------------------------------------------------------------------
@@ -248,6 +247,16 @@ if has("gui_running")
   let g:solarized_visibility="high"
   colorscheme solarized
 endif
+
+"------------------------------------------------------------------------------
+" GOLANG
+"------------------------------------------------------------------------------
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 
 "------------------------------------------------------------------------------

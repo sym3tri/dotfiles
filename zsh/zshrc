@@ -1,11 +1,18 @@
-# Things to add to path (like this?)
-PATH=/bin:/usr/local/bin:/usr/bin:$HOME/dotfiles/shell:$HOME/.rvm/bin:/usr/local/go/bin:$PATH;
+PATH=/bin:/usr/local/bin:/usr/bin:$HOME/.rvm/bin:$HOME/dotfiles/shell:$PATH;
 
 ####################
 # OSX Settings
 ####################
 # increase OS limit of concurrently open files
 ulimit -n 512
+
+
+####################
+# golang
+####################
+export GOPATH=~/dev/
+export GOROOT=/usr/local/go
+PATH=/usr/local/go/bin:$PATH;
 
 
 ####################
@@ -18,8 +25,6 @@ export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 export TERM=xterm-256color
 
-# export
-export GOPATH=~/dev/
 
 # history
 export HISTSIZE=10000

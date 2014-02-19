@@ -32,6 +32,7 @@ git clone git@github.com:sym3tri/dotfiles.git
 cd $HOME/dotfiles
 ln -s $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
 ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
+mv $HOME/.vim $HOME/.vim_old
 ln -s $HOME/dotfiles/vim $HOME/.vim
 ln -s $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 
@@ -48,4 +49,13 @@ npm install -g bower
 npm install -g grunt-cli
 npm install -g express
 npm install -g jshint
+
+# GOLANG
+
+mkdir $HOME/.vim/ftdetect
+ln -s $GOROOT/misc/vim/ftdetect/gofiletype.vim $HOME/.vim/ftdetect/
+mkdir $HOME/.vim/syntax
+ln -s $GOROOT/misc/vim/syntax/go.vim $HOME/.vim/syntax
+mkdir $HOME/.vim/autoload
+ln -s $GOROOT/misc/vim/autoload/go/complete.vim $HOME/.vim/autoload/go
 
