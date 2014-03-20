@@ -10,9 +10,9 @@ ulimit -n 512
 ####################
 # golang
 ####################
-export GOPATH=~/dev/
+export GOPATH=~/dev/go
 export GOROOT=/usr/local/go
-PATH=/usr/local/go/bin:$PATH;
+PATH=/usr/local/go/bin:$GOPATH/bin:$PATH;
 
 
 ####################
