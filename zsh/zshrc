@@ -1,4 +1,4 @@
-PATH=/bin:/usr/local/bin:/usr/bin:$HOME/.rvm/bin:$HOME/dotfiles/shell:$PATH;
+PATH=/bin:/usr/local/bin:/usr/bin:$HOME/.rvm/bin:$HOME/bin:$HOME/dotfiles/shell:$PATH;
 
 ####################
 # OSX Settings
@@ -110,3 +110,7 @@ alias gr="git rebase"
 alias ga="git add"
 # A better gitlog
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset" --abbrev-commit'
+
+# The next line updates PATH for the Google Cloud SDK.
+#source /Users/ed/google-cloud-sdk/path.bash.inc
+PATH=$HOME/google-cloud-sdk/bin:$PATH;
