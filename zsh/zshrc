@@ -93,6 +93,8 @@ alias resource="source $HOME/.zshrc"
 alias grep="grep --color=always"
 alias ..="cd .."
 alias ...="cd ../.."
+#copy working dir - put pwd into mac clipboard
+alias cwd="pwd | pbcopy"
 # remove old python compiled files
 alias rmpyc='find . -name "*.pyc" -delete'
 # vim
