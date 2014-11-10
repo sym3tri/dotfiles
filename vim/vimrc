@@ -258,10 +258,11 @@ filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
+"autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " override gofmt with goimports & run on each save.
 "let g:gofmt_command = "goimports"
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+"autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 "------------------------------------------------------------------------------
 " PLUGINS

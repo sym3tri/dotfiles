@@ -1,4 +1,4 @@
-PATH=/bin:/usr/local/bin:/usr/bin:$HOME/.rvm/bin:$HOME/bin:$HOME/dotfiles/shell:$PATH;
+PATH=/bin:/usr/local/bin:/usr/bin:$HOME/.rvm/bin:$HOME/bin:$HOME/dotfiles/shell:$HOME/google-cloud-sdk/bin:$PATH;
 
 ####################
 # OSX Settings
