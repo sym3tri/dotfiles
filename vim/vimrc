@@ -181,10 +181,6 @@ autocmd BufReadPre SConscript set filetype=python
 " use 4 space tabs for python files
 au FileType python setl tabstop=4
 au FileType python setl shiftwidth=4
-" Go files use tabs
-au FileType go setl tabstop=4
-au FileType go setl shiftwidth=4
-au FileType go setl noexpandtab
 
 " specify syntax language for non-standard file types
 au BufReadPost *.less set syntax=css
@@ -215,7 +211,7 @@ Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-fugitive'
-Bundle 'jnwhiteh/vim-golang'
+"Bundle 'jnwhiteh/vim-golang'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'rking/ag.vim'
@@ -251,13 +247,21 @@ endif
 "------------------------------------------------------------------------------
 " GOLANG
 "------------------------------------------------------------------------------
+" Go files use tabs
+au FileType go setl tabstop=4
+au FileType go setl shiftwidth=4
+au FileType go setl noexpandtab
+
+" use all golang plugins
 filetype off
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
+" override gofmt with goimports & run on each save.
+"let g:gofmt_command = "goimports"
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 "------------------------------------------------------------------------------
 " PLUGINS
