@@ -260,8 +260,8 @@ filetype plugin indent on
 syntax on
 "autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
-" override gofmt with goimports & run on each save.
-"let g:gofmt_command = "goimports"
+" override gofmt with goimports.
+let g:gofmt_command = "goimports"
 "autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 "------------------------------------------------------------------------------
