@@ -160,6 +160,8 @@ cmap w!! %!sudo tee > /dev/null %
 nmap <silent><Leader>- 4<c-w>-
 nmap <silent><Leader>= 4<c-w>+
 
+"command! Fmt %!python -m json.tool
+
 "------------------------------------------------------------------------------
 " MACROS
 "------------------------------------------------------------------------------
@@ -192,34 +194,36 @@ au BufNewFile,BufRead *.hbs set filetype=html
 "------------------------------------------------------------------------------
 " Vundle manages plugins
 "------------------------------------------------------------------------------
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " original repos on github
-Bundle 'docunext/closetag.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'Shutnik/jshint2.vim'
-Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'scrooloose/nerdtree'
-Bundle 'msanders/snipmate.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'bling/vim-airline'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'tpope/vim-fugitive'
-"Bundle 'jnwhiteh/vim-golang'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'rking/ag.vim'
+Plugin 'docunext/closetag.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'Shutnik/jshint2.vim'
+Plugin 'scrooloose/nerdcommenter.git'
+Plugin 'scrooloose/nerdtree'
+Plugin 'msanders/snipmate.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-fugitive'
+"Plugin 'jnwhiteh/vim-golang'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'rking/ag.vim'
+Plugin 'fatih/vim-go'
 
 " vim-scripts repos
-Bundle 'ShowMarks'
+Plugin 'ShowMarks'
 
-
+call vundle#end()
+filetype plugin indent on
 "------------------------------------------------------------------------------
 " MAC VIM
 "------------------------------------------------------------------------------
@@ -261,7 +265,9 @@ syntax on
 "autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " override gofmt with goimports.
-let g:gofmt_command = "goimports"
+let g:go_fmt_command = "goimports"
+" disable auto fmt on save
+let g:go_fmt_autosave = 0
 "autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 "------------------------------------------------------------------------------
@@ -284,6 +290,34 @@ highlight ShowMarksHLm ctermfg=blue ctermbg=black
 
 " TAGBAR
 nnoremap <silent> <leader>t :TagbarToggle<CR>
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
 
 " CLOSETAG
 
