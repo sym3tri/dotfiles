@@ -263,7 +263,7 @@ syntax on
 "autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " override gofmt with goimports.
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
 " disable auto fmt on save
 let g:go_fmt_autosave = 0
 "autocmd FileType go autocmd BufWritePre <buffer> Fmt
