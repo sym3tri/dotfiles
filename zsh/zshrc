@@ -36,8 +36,12 @@ setopt INC_APPEND_HISTORY
 setopt HIST_REDUCE_BLANKS
 
 # do partial search of history
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
+#bindkey '^[[A' up-line-or-search
+#bindkey '^[[B' down-line-or-search
+
+# http://unix.stackexchange.com/questions/97843/how-can-i-search-history-with-what-is-already-entered-at-the-prompt-in-zsh
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 # use vim mode & with sane settings
 # http://dougblack.io/words/zsh-vi-mode.html
