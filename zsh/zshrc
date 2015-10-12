@@ -118,6 +118,8 @@ alias ga="git add"
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset" --abbrev-commit'
 alias gbd='git for-each-ref --sort=-committerdate refs/heads/ | less'
 
+alias beet='BEETSDIR=/Volumes/2TB/audio/beets/master beet'
+
 # The next line updates PATH for the Google Cloud SDK.
 #source /Users/ed/google-cloud-sdk/path.bash.inc
 PATH=$HOME/google-cloud-sdk/bin:$PATH;
