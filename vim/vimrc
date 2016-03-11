@@ -216,6 +216,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'rking/ag.vim'
 Plugin 'fatih/vim-go'
+Plugin 'leafgarland/typescript-vim.git'
 
 " vim-scripts repos
 Plugin 'ShowMarks'
