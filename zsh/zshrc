@@ -117,3 +117,7 @@ alias gbd='git for-each-ref --sort=-committerdate refs/heads/ | less'
 # The next line updates PATH for the Google Cloud SDK.
 #source /Users/ed/google-cloud-sdk/path.bash.inc
 PATH=$HOME/google-cloud-sdk/bin:$PATH;
+
+source ~/private-rc-stuff
+
+alias kc=kubectl
