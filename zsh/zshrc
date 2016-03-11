@@ -1,4 +1,4 @@
-PATH=/bin:/usr/local/bin:/usr/bin:$HOME/.rvm/bin:$HOME/bin:$HOME/dotfiles/shell:$HOME/google-cloud-sdk/bin:$PATH;
+PATH=/bin:/usr/local/bin:/usr/bin:$HOME/.rvm/bin:$HOME/bin:$HOME/dotfiles/shell:$HOME/google-cloud-sdk/bin:"/Applications/VMware Fusion.app/Contents/Library":$PATH;
 
 ####################
 # OSX Settings
