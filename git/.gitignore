@@ -2,8 +2,6 @@
 *.log
 *.swp
 *.pyc
-eds_env_shellscript
-*.local.etcd
 .hgignore
 .agignore
 .env

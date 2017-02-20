@@ -1,14 +1,9 @@
-"------------------------------------------------------------------------------
-" QUICK REFERENCE
-"------------------------------------------------------------------------------
-" help quickref
-"------------------------------------------------------------------------------
+set clipboard+=unnamedplus
 
 "------------------------------------------------------------------------------
 " GENERAL CONFIG
 "------------------------------------------------------------------------------
-set shell=/bin/zsh
-set nocompatible
+" set nocompatible
 " help language should be English
 set helplang=en
 " lang to use for menu translations
@@ -19,8 +14,8 @@ set backspace=indent,eol,start
 set fileencodings=utf-8
 set termencoding=utf-8
 " Enable filetype detection
-" filetype on
-filetype off
+filetype on
+" filetype off
 " load filetype specific plugins
 filetype plugin on
 " different indentation by filetype
@@ -49,6 +44,7 @@ set whichwrap+=h,l
 set nobackup
 set nowb
 set noswapfile
+
 " CODE FOLDING
 " fold based on indent
 set foldmethod=indent
@@ -57,20 +53,18 @@ set foldnestmax=10
 " no fold by default
 set nofoldenable
 set foldlevel=1
-" Autocomplete with OmniComplete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 " Persistent undo
 set undodir=~/.vim_runtime/undodir
 set undofile
+
 " TABS
 set expandtab
 set softtabstop=2
 set shiftwidth=2
 set smarttab
 set smartindent
+
 " STATUS LINE
 " Show current git branch
 set laststatus=2
@@ -80,25 +74,29 @@ set listchars=tab:▸\ ,eol:¬
 set listchars+=trail:·
 set listchars+=nbsp:f
 " use the OS clipboard
-set clipboard=unnamed
+"set clipboard=unnamed
 
 " Maintain more context around the cursor
 set scrolloff=3
+
+set updatetime=250
 
 "------------------------------------------------------------------------------
 " COLORS
 "------------------------------------------------------------------------------
 " syntax highlighting
 syn on
-"Higlight current line only in insert mode
-autocmd InsertLeave * set nocursorline
-autocmd InsertEnter * set cursorline
-"Invisible character colors
+" Higlight current line only in insert mode
+" autocmd InsertLeave * set nocursorline
+" autocmd InsertEnter * set cursorline
+" Invisible character colors
 highlight NonText guifg=#236360
 highlight SpecialKey guifg=#044A46
-" warning for beyond the 80th column
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+" Warning for beyond the 80th column
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
+
+colorscheme jellybeans
 
 "------------------------------------------------------------------------------
 " Functions
@@ -152,6 +150,7 @@ map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 nmap <silent> <leader>s :set spell!<CR>
 " Force Saving Files that Require Root Permission
 cmap w!! %!sudo tee > /dev/null %
+
 " Resize vertical splits more easily
 " TODO: fix this
 "nmap <silent><leader>\> 4<c-w>\>
@@ -159,8 +158,6 @@ cmap w!! %!sudo tee > /dev/null %
 " Resize horizontal splits more easily
 nmap <silent><Leader>- 4<c-w>-
 nmap <silent><Leader>= 4<c-w>+
-
-"command! Fmt %!python -m json.tool
 
 "------------------------------------------------------------------------------
 " MACROS
@@ -177,75 +174,13 @@ nmap <leader>' @w
 "------------------------------------------------------------------------------
 " FUNNY FILE TYPES
 "------------------------------------------------------------------------------
-" set highlighting for Scons files to python
-autocmd BufReadPre SConstruct set filetype=python
-autocmd BufReadPre SConscript set filetype=python
 " use 4 space tabs for python files
 au FileType python setl tabstop=4
 au FileType python setl shiftwidth=4
 
 " specify syntax language for non-standard file types
 au BufReadPost *.less set syntax=css
-" Pretend handlebars files are html
-au BufNewFile,BufRead *.handlebars set filetype=html
-au BufNewFile,BufRead *.hbs set filetype=html
-
-
-"------------------------------------------------------------------------------
-" Vundle manages plugins
-"------------------------------------------------------------------------------
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle required! 
-Plugin 'gmarik/vundle'
-
-" original repos on github
-Plugin 'docunext/closetag.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'scrooloose/nerdcommenter.git'
-Plugin 'scrooloose/nerdtree'
-Plugin 'msanders/snipmate.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'tpope/vim-fugitive'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'rking/ag.vim'
-Plugin 'fatih/vim-go'
-Plugin 'leafgarland/typescript-vim.git'
-
-" vim-scripts repos
-Plugin 'ShowMarks'
-
-call vundle#end()
-filetype plugin indent on
-"------------------------------------------------------------------------------
-" MAC VIM
-"------------------------------------------------------------------------------
-" gui only options
-if has("gui_running")
-  set guioptions=egmrt
-  " transparency, hellz yeah
-  set transparency=8
-  " font and size
-  set guifont=Inconsolata:h16
-  " tab label
-  set guitablabel=%M%t
-  " enable use of the mouse
-  set mouse=a
-  " Printing
-  set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
-  " use solarized color scheme
-  let g:solarized_termtrans=1
-  let g:solarized_termcolors=256
-  let g:solarized_contrast="high"
-  let g:solarized_visibility="high"
-  colorscheme solarized
-endif
+au BufReadPost *.scss set syntax=css
 
 "------------------------------------------------------------------------------
 " GOLANG
@@ -263,71 +198,42 @@ filetype plugin indent on
 syntax on
 "autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
-" override gofmt with goimports.
-"let g:go_fmt_command = "goimports"
 " disable auto fmt on save
 let g:go_fmt_autosave = 0
-"autocmd FileType go autocmd BufWritePre <buffer> Fmt
-"
+" shortcut for gofmt
 nmap <leader>f :GoFmt<CR>
 
 "------------------------------------------------------------------------------
 " PLUGINS
 "------------------------------------------------------------------------------
+" https://github.com/junegunn/vim-plug
+" Reload .vimrc and :PlugInstall to install plugins.
 
-" set color scheme
-colorscheme jellybeans
-" make background dark
-hi Normal ctermbg=16
+call plug#begin('~/.local/share/nvim/plugged')
+    " Frequently used
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'vim-airline/vim-airline'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" SHOW MARKS
-let g:showmarks_enable=0
-let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-highlight ShowMarksHLl ctermfg=white ctermbg=black
-highlight ShowMarksHLu ctermfg=white ctermbg=black
-highlight ShowMarksHLo ctermfg=59 ctermbg=black
-highlight ShowMarksHLm ctermfg=blue ctermbg=black
+    " Sometimes used
+    Plug 'docunext/closetag.vim'
+    Plug 'msanders/snipmate.vim'
+    Plug 'fatih/vim-go'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'jelera/vim-javascript-syntax'
+    Plug 'hashivim/vim-terraform'
+
+    "Plug 'tpope/vim-fugitive'
+    "Navigate & Manage marks
+    "Plug kshenoy/vim-signature
+call plug#end()
 
 
-" TAGBAR
-nnoremap <silent> <leader>t :TagbarToggle<CR>
-
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
-
-" CLOSETAG
-
-" FUGITIVE
-
-" JSHint
-
-" NERDCOMMENTER
-
+"------------------------------------------------------------------------------
+" PLUGIN CONFIG
+"------------------------------------------------------------------------------
 " NERDTREE
 let NERDTreeShowHidden=1
 nmap <leader>nn :NERDTree<CR>
@@ -335,20 +241,5 @@ nmap <leader>nr :NERDTreeMirror<CR>
 nmap <leader>nf :NERDTreeFind<CR>
 nmap <leader>nc :NERDTree<CR><C-w>p:NERDTreeFind<CR>
 " hide files from NERDTree
-let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeIgnore = ['\.DS_Store$']
-
-" JSLINT.VIM
-"nmap <leader>s :JSLintToggle<CR>
-let $JS_CMD='node'
-
-" SNIPMATE
-nmap <leader>sr :call ReloadAllSnippets()<CR>
-
-" CTRL-P
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.git/*,*/node_modules/*,*app/components/*,*/.sass-cache/*
-
-" SYNTASTIC
-" use passive mode by default
-"let g:syntastic_mode_map={ 'mode': 'passive', 'active_filetypes': ['css'], 'passive_filetypes': ['js'] }
 

@@ -1,0 +1,14 @@
+[user]
+    name = Ed Rooth
+    email = ed.rooth@coreos.com
+[push]
+    default = simple
+[color]
+    ui = auto
+[core]
+    excludesfile = ~/.gitignore
+    editor = nvim
+[gpg]
+    program = gpg2
+[diff]
+    ~/git-diff-wrapper
