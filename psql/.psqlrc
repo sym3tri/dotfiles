@@ -1,0 +1,10 @@
+-- Use best available output format
+\x auto
+
+-- Show how long each query takes to execute
+\timing
+
+\pset null '[NULL]'
+
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTCONTROL ignoredups

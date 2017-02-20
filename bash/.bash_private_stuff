@@ -1,0 +1,2 @@
+export SECURE_REPO=~/dev/coreos-inc/secure
+export INFRA_REPO=~/dev/coreos-inc/infra
