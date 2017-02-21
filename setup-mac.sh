@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # Prior to running this ensure the following are installed:
-#   Xcode, iTerm 2
-
-cd $HOME
+#   Xcode, iTerm 2, Golang
 
 echo "OSX: disable dashboard"
 defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock
@@ -16,7 +14,15 @@ brew doctor
 brew update
 
 echo "install brew apps"
-brew install nvim git ag tree gpg2 ctags-exuberant mercurial openssl python unzip stow glide
+brew install neovim/neovim/neovim
+brew install git
+brew install the_silver_searcher
+brew install tree
+brew install gpg2
+brew install mercurial
+brew install openssl
+brew install python
+brew install stow
 
 echo "bew install standard gnu utils"
 # The --default-names option will prevent Homebrew from prepending a g to each of the newly installed commands
@@ -41,8 +47,6 @@ brew install wget
 
 
 echo "setup dotfiles"
-git clone git@github.com:sym3tri/dotfiles.git
-cd $HOME/dotfiles
 stow bash
 stow git
 stow nvim

@@ -10,5 +10,3 @@
     editor = nvim
 [gpg]
     program = gpg2
-[diff]
-    ~/git-diff-wrapper
