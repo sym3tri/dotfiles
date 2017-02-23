@@ -5,6 +5,7 @@
 #  sudo pkill scadeamon
 #  sudo pkill gpg-agent
 
+# yum repo for google chrome
 echo "setup yum repos"
 cat << EOF > ./google-chrome.repo
 [google-chrome]
@@ -16,6 +17,9 @@ gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 EOF
 
 sudo mv google-chrome.repo /etc/yum.repos.d/
+
+# setup RPM Fusion
+sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 echo "dnf install apps"
 sudo dnf install -y neovim
@@ -45,8 +49,12 @@ stow terraform
 
 source ~/.bashrc
 
+# aws cli
+pip install --upgrade --user awscli
+
 # GO
 wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz
+rm go1.8.linux-amd64.tar.gz
 
 ./go-get.sh
