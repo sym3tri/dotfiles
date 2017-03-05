@@ -5,6 +5,8 @@
 #  sudo pkill scadeamon
 #  sudo pkill gpg-agent
 
+echo "running fedora setup..."
+
 # yum repo for google chrome
 echo "setup yum repos"
 cat << EOF > ./google-chrome.repo
@@ -49,7 +51,7 @@ stow terraform
 
 source ~/.bashrc
 
-# aws cli
+# python tools
 pip install --upgrade --user awscli
 
 # GO

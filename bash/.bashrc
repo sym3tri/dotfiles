@@ -1,14 +1,21 @@
+#!/bin/bash -e
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
+    source /etc/bashrc
 fi
 
 export HISTFILESIZE=3000
 
 if [ -f ~/.bash_private_stuff ]; then
-    . ~/.bash_private_stuff
+    source ~/.bash_private_stuff
 fi
 
+# Python
+export PYTHONUSERBASE=~/.local
+PATH=$PATH:$PYTHONUSERBASE/bin
+
+# Go
 export GOPATH=$HOME/dev/go
 PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:~/usr/local/bin
@@ -17,10 +24,10 @@ PATH=$PATH:$GOPATH/bin
 
 # GIT
 if [ -e "/usr/share/git-core/contrib/completion/git-prompt.sh" ]; then
-  source "/usr/share/git-core/contrib/completion/git-prompt.sh"
-  export PS1='[\h \[\e[1;36m\]\W\[\e[m\]$(declare -F __git_ps1 &>/dev/null && __git_ps1 " \[\e[1;32m\](%s)\[\e[m\]")]\$ '
+    source "/usr/share/git-core/contrib/completion/git-prompt.sh"
+    export PS1='[\h \[\e[1;36m\]\W\[\e[m\]$(declare -F __git_ps1 &>/dev/null && __git_ps1 " \[\e[1;32m\](%s)\[\e[m\]")]\$ '
 else
-  export PS1='[\h \[\e[1;36m\]\W\[\e[m\]]\$ '
+    export PS1='[\h \[\e[1;36m\]\W\[\e[m\]]\$ '
 fi
 
 alias c='clear'
@@ -54,14 +61,26 @@ export GPG_TTY
 # Use GPG agent instead of default ssh agent.
 # From gpg-agent man page:
 unset SSH_AGENT_PID
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs | awk 'BEGIN {FS=":"} /^agent-socket:/ {print $2 ".ssh"}')
+export SSH_AUTH_SOCK
+SSH_AUTH_SOCK=$(gpgconf --list-dirs | awk 'BEGIN {FS=":"} /^agent-socket:/ {print $2 ".ssh"}')
 
-
+# FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# NVM
 export NVM_DIR="/home/ed/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# kubectl bash completion
+# kubectl
 source ~/bash_completions/kubectl
 
+# beets
+if [ -d /Volumes/2TB/audio/beets/master ]; then
+    export BEETSDIR=/Volumes/2TB/audio/beets/master
+fi
+
+# Platform specific stuff
+unamestr=$(uname)
+if [[ "$unamestr" == 'Darwin' ]]; then
+    source ~/.bashrc_mac
+fi

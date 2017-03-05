@@ -3,14 +3,42 @@
 # Prior to running this ensure the following are installed:
 #   Xcode, iTerm 2, Golang
 
-echo "OSX: disable dashboard"
-defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock
-echo "OSX: always show hidden files"
-defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder
+echo "running OSX setup..."
+
+# see http://www.defaults-write.com
+echo "OSX: Disable dashboard"
+defaults write com.apple.dashboard mcx-disabled -boolean YES
+echo "OSX: Always show hidden files in Finder"
+defaults write com.apple.finder AppleShowAllFiles TRUE
+echo "OSX: Display file extensions in Finder"
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+echo "OSX: Display full posix path in OS X Finder title Bar"
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+echo "OSX: Change default view style in Finder to List View"
+defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+echo "OSX: Disable animations when opening and closing windows"
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+echo "OSX: Make all Mission Control animations faster"
+defaults write com.apple.dock expose-animation-duration -float 0.1
+echo "OSX: disable shadows on screenshots"
+defaults write com.apple.screencapture disable-shadow -bool true
+echo "OSX: Enable debug menu in Disk Utility"
+defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+echo "OSX: Disable new disks requests for Time Machine"
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+echo "OSX: Disable Dock animations"
+defaults write com.apple.dock launchanim -bool false
+
+killall Dock
+killall Finder
+
 
 echo "install homebrew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew doctor
+if ! [ -x "$(command -v brew)" ]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew doctor
+    brew update
+fi
 brew update
 
 echo "install brew apps"
@@ -22,7 +50,11 @@ brew install gpg2
 brew install mercurial
 brew install openssl
 brew install python
+brew install python3
 brew install stow
+brew install ShellCheck
+brew install awscli
+brew upgrade `brew outdated`
 
 echo "bew install standard gnu utils"
 # The --default-names option will prevent Homebrew from prepending a g to each of the newly installed commands
@@ -45,7 +77,6 @@ brew install watch
 brew install wdiff --with-gettext
 brew install wget
 
-
 echo "setup dotfiles"
 stow bash
 stow git
@@ -53,12 +84,11 @@ stow nvim
 stow psql
 stow terraform
 
-# GOLANG
-#mkdir $HOME/.vim/ftdetect
-#ln -s $GOROOT/misc/vim/ftdetect/gofiletype.vim $HOME/.vim/ftdetect/
-#mkdir $HOME/.vim/syntax
-#ln -s $GOROOT/misc/vim/syntax/go.vim $HOME/.vim/syntax
-#mkdir $HOME/.vim/autoload
-#ln -s $GOROOT/misc/vim/autoload/go/complete.vim $HOME/.vim/autoload/go
+source ~/.bashrc
+
+# python tools
+pip install --upgrade --user beets
 
 ./go-get.sh
+
+echo "done"
