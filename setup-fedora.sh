@@ -31,6 +31,7 @@ sudo dnf install -y powertop
 sudo dnf install -y paperkey
 sudo dnf install -y stow
 sudo dnf install -y mercurial
+sudo dnf install -y gnome-tweak-tool
 #sudo dnf install nautilus-dropbox
 sudo dnf install -y ShellCheck
 sudo dnf install -y arandr
@@ -52,11 +53,14 @@ stow terraform
 source ~/.bashrc
 
 # python tools
+sudo pip install --upgrade pip
 pip install --upgrade --user awscli
 
 # GO
 wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz
 rm go1.8.linux-amd64.tar.gz
+
+source ~/.bashrc
 
 ./go-get.sh
