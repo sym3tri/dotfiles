@@ -25,6 +25,7 @@ sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-r
 
 echo "dnf install apps"
 sudo dnf install -y neovim
+sudo dnf install -y xsel # so system clipboard works with vim
 sudo dnf install -y google-chrome-stable
 sudo dnf install -y htop
 sudo dnf install -y powertop
