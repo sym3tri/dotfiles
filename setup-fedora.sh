@@ -50,17 +50,20 @@ stow nvim
 stow psql
 stow terraform
 
-source ~/.bashrc
+# enable GPG ssh support
+mkdir -p ~/.gnupg
+touch ~/.gnupg/gpg-agent.conf
+echo enable-ssh-support > ~/.gnupg/gpg-agent.conf
 
 # python tools
+source ~/.bashrc
 sudo pip install --upgrade pip
 pip install --upgrade --user awscli
 
 # GO
+source ~/.bashrc
 wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz
 rm go1.8.linux-amd64.tar.gz
-
-source ~/.bashrc
 
 ./go-get.sh
