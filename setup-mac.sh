@@ -76,6 +76,9 @@ brew install make
 brew install watch
 brew install wdiff --with-gettext
 brew install wget
+# beets plugins
+brew install ffmpeg
+brew install chromaprint
 
 echo "setup dotfiles"
 stow bash
@@ -86,8 +89,13 @@ stow terraform
 
 source ~/.bashrc
 
-# python tools
+# python tools (mostly for beets)
 pip install --upgrade --user beets
+pip install --upgrade --user discogs-client
+pip install --upgrade --user pyacoustid
+pip install --upgrade --user requests
+pip install --upgrade --user pylast
+pip install --upgrade --user requests_oauthlib
 
 ./go-get.sh
 
