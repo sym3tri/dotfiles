@@ -41,7 +41,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias cwd='pwd | xsel -b'
 alias kc='kubectl'
-alias open='xdg-open'
 alias rkt='/sbin/rkt'
 
 # GIT ALIASES
@@ -83,4 +82,6 @@ fi
 unamestr=$(uname)
 if [[ "$unamestr" == 'Darwin' ]]; then
     source ~/.bashrc_mac
+else
+    alias open='xdg-open'
 fi
