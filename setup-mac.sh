@@ -54,6 +54,7 @@ brew install python3
 brew install stow
 brew install ShellCheck
 brew install awscli
+brew install jq
 brew upgrade `brew outdated`
 
 echo "bew install standard gnu utils"

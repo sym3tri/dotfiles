@@ -38,6 +38,7 @@ sudo dnf install -y ShellCheck
 sudo dnf install -y arandr
 sudo dnf install -y qemu
 sudo dnf install -y the_silver_searcher tmux
+sudo dnf install -y jq
 # gpg stuff
 sudo dnf install -y gnupg2 cryptsetup paperkey
 # yubkikey tools
