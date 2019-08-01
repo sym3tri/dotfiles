@@ -63,15 +63,15 @@ brew tap homebrew/dupes
 brew install coreutils
 brew install binutils
 brew install diffutils
-brew install ed --with-default-names
-brew install findutils --with-default-names
+brew install ed
+brew install findutils
 brew install gawk
-brew install gnu-indent --with-default-names
-brew install gnu-sed --with-default-names
-brew install gnu-tar --with-default-names
-brew install gnu-which --with-default-names
+brew install gnu-indent
+brew install gnu-sed
+brew install gnu-tar
+brew install gnu-which
 brew install gnutls
-brew install grep --with-default-names
+brew install grep
 brew install gzip
 brew install make
 brew install watch
