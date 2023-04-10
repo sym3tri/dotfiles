@@ -1,3 +1,5 @@
+lang en_US.UTF-8
+
 " use the OS clipboard
 set clipboard+=unnamedplus
 
@@ -69,7 +71,7 @@ set smartindent
 " STATUS LINE
 " Show current git branch
 set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 set listchars+=trail:·
@@ -171,13 +173,20 @@ nmap <leader>" @q
 let @w = 'ciw''"''B'
 nmap <leader>' @w
 
-
 "------------------------------------------------------------------------------
 " FUNNY FILE TYPES
 "------------------------------------------------------------------------------
 " use 4 space tabs for python files
 au FileType python setl tabstop=4
 au FileType python setl shiftwidth=4
+au BufNewFile,BufRead *.py
+    \ setl tabstop=4 |
+    \ setl softtabstop=4 |
+    \ setl shiftwidth=4 |
+    \ setl textwidth=79 |
+    \ setl expandtab |
+    \ setl autoindent |
+    \ setl fileformat=unix
 
 " specify syntax language for non-standard file types
 au BufReadPost *.less set syntax=css

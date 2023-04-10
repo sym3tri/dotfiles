@@ -7,20 +7,27 @@ fi
 
 export HISTFILESIZE=3000
 
-if [ -f ~/.bash_private_stuff ]; then
-    source ~/.bash_private_stuff
-fi
+# Homebrew Software
+PATH=/opt/homebrew/bin:$PATH
+PATH=/opt/homebrew/opt/python@3.11/libexec/bin:$PATH
+
+
 
 # Python
-export PYTHONUSERBASE=~/.local
-PATH=$PATH:$PYTHONUSERBASE/bin
+PYTHONPATH="$(brew --prefix)/lib/python@3.11/site-packages"
+export PYTHONPATH
+
+#export PYTHONUSERBASE=~/.local
+#PATH=$PATH:$PYTHONUSERBASE/bin
+#export PATH="$HOME/.pyenv/bin:$PATH"
 
 # Go
-export GOPATH=$HOME/dev/go
-PATH=$PATH:/usr/local/go/bin
-PATH=$PATH:~/usr/local/bin
-PATH=$PATH:~/usr/local/bin/rkt
-PATH=$PATH:$GOPATH/bin
+#export GOPATH=$HOME/dev/go
+#PATH=$PATH:/usr/local/go/bin
+#PATH=$PATH:~/usr/local/bin
+#PATH=$PATH:$GOPATH/bin
+
+export EDITOR=nvim
 
 # GIT
 if [ -e "/usr/share/git-core/contrib/completion/git-prompt.sh" ]; then
@@ -40,8 +47,6 @@ alias bashrc='vim $HOME/.bashrc'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cwd='pwd | xsel -b'
-alias kc='kubectl'
-alias rkt='/sbin/rkt'
 
 # GIT ALIASES
 alias gs='git status -sb'
@@ -55,33 +60,24 @@ alias gbd='git for-each-ref --sort=-committerdate refs/heads/ | less'
 alias gpr='open "https://github.com/$(git_current_origin)/pull/new/$(git_current_branch)"'
 
 # GPG
-GPG_TTY=$(tty)
-export GPG_TTY
-# Use GPG agent instead of default ssh agent.
-# From gpg-agent man page:
-unset SSH_AGENT_PID
-export SSH_AUTH_SOCK
-SSH_AUTH_SOCK=$(gpgconf --list-dirs | awk 'BEGIN {FS=":"} /^agent-socket:/ {print $2 ".ssh"}')
 
 # FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # NVM
-export NVM_DIR="/home/ed/.nvm"
+export NVM_DIR="/Users/ed/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# kubectl
-source ~/bash_completions/kubectl
 
 # beets
 if [ -d /Volumes/2TB/audio/beets/master ]; then
     export BEETSDIR=/Volumes/2TB/audio/beets/master
 fi
 
-# Platform specific stuff
-unamestr=$(uname)
-if [[ "$unamestr" == 'Darwin' ]]; then
-    source ~/.bashrc_mac
-else
-    alias open='xdg-open'
-fi
+# Make sure colors show up in iTerm
+export CLICOLOR=1
+export LSCOLORS=dxfxcxdxbxegedabagacad
+export TERM=xterm-256color
+
+export BEETSDIR=/Volumes/extern/audio/beets/master
+
+randpw(){ /usr/bin/openssl rand -base64 32; }

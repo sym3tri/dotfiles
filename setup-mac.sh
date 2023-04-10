@@ -6,8 +6,8 @@
 echo "running OSX setup..."
 
 # see http://www.defaults-write.com
-echo "OSX: Disable dashboard"
-defaults write com.apple.dashboard mcx-disabled -boolean YES
+#echo "OSX: Disable dashboard"
+#defaults write com.apple.dashboard mcx-disabled -boolean YES
 echo "OSX: Always show hidden files in Finder"
 defaults write com.apple.finder AppleShowAllFiles TRUE
 echo "OSX: Display file extensions in Finder"
@@ -42,22 +42,21 @@ fi
 brew update
 
 echo "install brew apps"
-brew install neovim/neovim/neovim
+brew install neovim
 brew install git
-brew install the_silver_searcher
-brew install tree
-brew install gpg2
-brew install mercurial
-brew install openssl
-brew install python
-brew install python3
+brew install fzf
+#brew install the_silver_searcher
+#brew install tree
+#brew install gpg2
+#brew install mercurial
+#brew install openssl
 brew install stow
 brew install ShellCheck
-brew install awscli
 brew install jq
+brew install ShellCheck
 brew upgrade `brew outdated`
 
-echo "bew install standard gnu utils"
+echo "brew install standard gnu utils"
 # The --default-names option will prevent Homebrew from prepending a g to each of the newly installed commands
 brew tap homebrew/dupes
 brew install coreutils
@@ -85,8 +84,7 @@ echo "setup dotfiles"
 stow bash
 stow git
 stow nvim
-stow psql
-stow terraform
+#stow psql
 
 source ~/.bashrc
 

@@ -7,7 +7,7 @@ INSTALL
 -------
 
 - `git clone` this repo
-- install deps listed in new-setup.sh script
+- install deps listed in setup.sh script
 - run the new-setup.sh script
 
 

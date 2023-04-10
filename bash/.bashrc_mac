@@ -1,6 +1,0 @@
-# Mac stuff: only load if on OSX
-
-# Make sure colors show up in iTerm
-export CLICOLOR=1
-export LSCOLORS=dxfxcxdxbxegedabagacad
-export TERM=xterm-256color
